@@ -36,7 +36,7 @@
                     <li class="customize-control">
                         <h3><?php esc_html_e( 'Upgrade', 'neomax' ); ?> <span>*</span></h3>
                         <p><?php esc_html_e( 'There are lots of reasons to upgrade to Pro version. Unlimited custom Colors, rich Typography options, multiple variation of Blog Feed layout and way much more. Also Premium Support included.', 'neomax' ); ?></p>
-                        <a href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Neomax Premium', 'neomax' ); ?></a>
+                        <a href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Neomax Premium', 'neomax' ); ?></a>
                     </li>
                     <li class="customize-control">
                         <h3><?php esc_html_e( 'Documentation', 'neomax' ); ?></h3>
@@ -179,7 +179,7 @@
                     'section'	  => 'neomax_information_bar',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
             )
@@ -222,7 +222,7 @@
                     'section'	  => 'neomax_header_designs',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
             )
@@ -332,7 +332,7 @@
                     'section'	  => 'neomax_customizer_mainslider',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
             )
@@ -418,7 +418,7 @@
                     'section'	  => 'neomax_customizer_slider',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
             )
@@ -569,7 +569,7 @@
                     'section'	  => 'neomax_general_options',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
             )
@@ -610,7 +610,7 @@
                     'section'	  => 'neomax_footer_settings',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
             )
@@ -711,7 +711,7 @@
                     'label'      => esc_html__( 'Upgrade', 'neomax' ), //set the label to appear in the Customizer
                     'section'    => 'colors', //select the section for it to appear under
                     'settings'   => 'neomax_main_text', //pick the setting it applies to
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                 )
             )
         );

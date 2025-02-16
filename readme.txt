@@ -2,15 +2,15 @@
 Contributors: vinethemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 6.4
-Version: 1.0.2
-Stable tag: 1.0.2
+Version: 1.0
+Stable tag: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blue, gray, light, white, two-columns, right-sidebar, fluid-layout, custom-background, custom-menu, editor-style, featured-images, sticky-post, translation-ready, blog, news, full-width-template, grid-layout, one-column, post-formats
 
 == Description ==
 
-Neomax is a pagespeed optimized WordPress blog theme designed to elevate your website's performance and user experience. This lightweight, mobile-first theme ensures rapid load times with features like lazy loading and asynchronous script loading. Built with clean code and integrated schema markup, Neomax enhances SEO performance, making it a perfect choice for bloggers and content creators. The theme is fully customizable, offering an intuitive customizer, pre-built layouts, and a drag-and-drop builder for effortless design. Advanced blog features include multiple post formats, related posts, and infinite scroll to keep readers engaged. With built-in social media integration, robust comment systems, and email subscription forms, Neomax enhances user interaction and engagement. Regular updates and secure coding practices ensure your site remains safe and up-to-date. Backed by comprehensive documentation and dedicated support, Neomax combines speed, functionality, and aesthetic appeal to deliver an exceptional blogging experience. Theme Demo here https://demo.vinethemes.com/livedemo/neomax.html.
+Neomax is a movie & video WordPress theme designed to elevate your website's performance and user experience. This lightweight, mobile-first theme ensures rapid load times with features like lazy loading and asynchronous script loading. Built with clean code and integrated schema markup, Neomax enhances SEO performance, making it a perfect choice for bloggers and content creators. The theme is fully customizable, offering an intuitive customizer, pre-built layouts, and a drag-and-drop builder for effortless design. Advanced blog features include multiple post formats, related posts, and infinite scroll to keep readers engaged. With built-in social media integration, robust comment systems, and email subscription forms, Neomax enhances user interaction and engagement. Regular updates and secure coding practices ensure your site remains safe and up-to-date. Backed by comprehensive documentation and dedicated support, Neomax combines speed, functionality, and aesthetic appeal to deliver an exceptional blogging experience. Theme Demo here https://demo.vinethemes.com/livedemo/neomax.html.
 
 
 == Copyright ==
@@ -125,11 +125,5 @@ Contact Us https://www.vinethemes.com/forums.
 
 == Changelog ==
 
-= 1.0 - May 23 2024 =
+= 1.0 - Feb 16 2025 =
 * Initial Public Release
-
-= 1.0.1 - Jun 02 2024 =
-* Improved Performance & Bug Fixes
-
-= 1.0.2 - Jun 02 2024 =
-* Added Logo information in Readme.txt file

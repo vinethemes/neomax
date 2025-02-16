@@ -57,7 +57,7 @@ Kirki::add_field( 'my_custom_text', array(
     'settings' => 'my_custom_text',
     'section'  => 'title_section',
     'type'     => 'custom',
-    'default'  => __( 'This is only available in Premium Version. <br/><a target="_blank" href="https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/"> + Upgrade to Premium Version</a>', 'neomax' ),
+    'default'  => __( 'This is only available in Premium Version. <br/><a target="_blank" href="https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/"> + Upgrade to Premium Version</a>', 'neomax' ),
 ) );
 
 

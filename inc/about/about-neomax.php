@@ -12,7 +12,7 @@ function neomax_about_page_output() {
     <div class="wrap">
         <h1><?php esc_html_e( 'Welcome to Neomax!', 'neomax' ); ?></h1>
         <p class="welcome-text">
-            <?php esc_html_e( 'Neomax is free Pagespeed Optimized Wordpress Blog Theme. It\'s perfect for any kind of blog: personal, multi-author, blog-news, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Coded with latest WordPress\' standards.', 'neomax' ); ?>
+            <?php esc_html_e( 'Neomax is free Movie & Video Wordpress Theme. It\'s perfect for any kind of blog: movie, video, news, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Coded with latest WordPress\' standards.', 'neomax' ); ?>
         </p>
 
         <!-- Tabs -->
@@ -64,7 +64,7 @@ function neomax_about_page_output() {
                 <h2><?php esc_html_e( 'Neomax Premium - Predefined Styles', 'neomax' ); ?></h2>
                 <p>
                     <?php esc_html_e( 'Neomax Premium\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the ', 'neomax' ); ?>
-                    <a target="_blank" href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/'); ?>"><?php esc_html_e( 'Neomax Premium Theme.', 'neomax' ); ?></a>
+                    <a target="_blank" href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/'); ?>"><?php esc_html_e( 'Neomax Premium Theme.', 'neomax' ); ?></a>
                     <?php esc_html_e( 'More details in the theme Documentation.', 'neomax' ); ?>
                 </p>
 
@@ -174,7 +174,7 @@ function neomax_about_page_output() {
                 <thead>
                 <tr>
                     <th>
-                        <a href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/'); ?>" target="_blank" class="button button-primary button-hero">
+                        <a href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/'); ?>" target="_blank" class="button button-primary button-hero">
                             <?php esc_html_e( 'Get Neomax Premium', 'neomax' ); ?>
                         </a>
 
@@ -328,7 +328,7 @@ function neomax_about_page_output() {
                 <tr>
                     <td></td>
                     <td colspan="2">
-                        <a href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/'); ?>" target="_blank" class="button button-primary button-hero">
+                        <a href="<?php echo esc_url('https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/'); ?>" target="_blank" class="button button-primary button-hero">
                             <?php esc_html_e( 'Get Neomax Premium', 'neomax' ); ?>
                         </a>
                         <br>

@@ -775,7 +775,7 @@ msgid "Welcome to Neomax!"
 msgstr ""
 
 #: inc/about/about-neomax.php:15
-msgid "Neomax is free Pagespeed Optimized Wordpress Blog Theme. It's perfect for any kind of blog: personal, multi-author, blog-news, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Coded with latest WordPress' standards."
+msgid "Neomax is free Movie and Video Wordpress Theme. It's perfect for any kind of blog: personal, multi-author, blog-news, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Coded with latest WordPress' standards."
 msgstr ""
 
 #: inc/about/about-neomax.php:23
@@ -1184,18 +1184,18 @@ msgid "You can change Website webfonts, colors, typography from here."
 msgstr ""
 
 #: theme-options.php:60
-msgid "This is only available in Premium Version. <br/><a target=\"_blank\" href=\"https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/\"> + Upgrade to Premium Version</a>"
+msgid "This is only available in Premium Version. <br/><a target=\"_blank\" href=\"https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/\"> + Upgrade to Premium Version</a>"
 msgstr ""
 #. Theme Name of the plugin/theme
 msgid "Neomax"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://www.vinethemes.com/downloads/neomax-pagespeed-optimized-wordpress-blog-theme/"
+msgid "https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Neomax is a pagespeed optimized WordPress blog theme designed to elevate your website's performance and user experience. This lightweight, mobile-first theme ensures rapid load times with features like lazy loading and asynchronous script loading. Built with clean code and integrated schema markup, Neomax enhances SEO performance, making it a perfect choice for bloggers and content creators. The theme is fully customizable, offering an intuitive customizer, pre-built layouts, and a drag-and-drop builder for effortless design. Advanced blog features include multiple post formats, related posts, and infinite scroll to keep readers engaged. With built-in social media integration, robust comment systems, and email subscription forms, Neomax enhances user interaction and engagement. Regular updates and secure coding practices ensure your site remains safe and up-to-date. Backed by comprehensive documentation and dedicated support, Neomax combines speed, functionality, and aesthetic appeal to deliver an exceptional blogging experience. Theme Demo here https://demo.vinethemes.com/livedemo/neomax.html."
+msgid "Neomax is a Movie and Video WordPress theme designed to elevate your website's performance and user experience. This lightweight, mobile-first theme ensures rapid load times with features like lazy loading and asynchronous script loading. Built with clean code and integrated schema markup, Neomax enhances SEO performance, making it a perfect choice for bloggers and content creators. The theme is fully customizable, offering an intuitive customizer, pre-built layouts, and a drag-and-drop builder for effortless design. Advanced blog features include multiple post formats, related posts, and infinite scroll to keep readers engaged. With built-in social media integration, robust comment systems, and email subscription forms, Neomax enhances user interaction and engagement. Regular updates and secure coding practices ensure your site remains safe and up-to-date. Backed by comprehensive documentation and dedicated support, Neomax combines speed, functionality, and aesthetic appeal to deliver an exceptional blogging experience. Theme Demo here https://demo.vinethemes.com/livedemo/neomax.html."
 msgstr ""
 
 #. Author of the plugin/theme
