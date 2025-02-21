@@ -465,11 +465,9 @@ function neomax_getCategory()
 //theme options
 include(get_template_directory() . '/neomax_custom_controller.php');
 include(get_template_directory() . '/customizer_style.php');
-//kirki themeoptions
 
-if (  class_exists( 'kirki' ) ) {
-    include(get_template_directory() . '/theme-options.php');
-}
+
+
 
 if ( ! function_exists( 'wp_body_open' ) ) {
     /**

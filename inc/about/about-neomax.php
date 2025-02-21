@@ -105,9 +105,6 @@ function neomax_about_page_output() {
                 <?php
 
 
-                // Kirki
-                neomax_recommended_plugin( 'kirki', 'index', esc_html__( 'Kirki', 'neomax' ), esc_html__( 'Theme advanced customizer options.', 'neomax' ) );
-
                 // MailChimp
                 neomax_recommended_plugin( 'mailchimp-for-wp', 'mailchimp-for-wp', esc_html__( 'Mailchimp', 'neomax' ), esc_html__( 'Mail newsletters. Simple but flexible.', 'neomax' ) );
 

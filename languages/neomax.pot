@@ -852,10 +852,6 @@ msgid "Recommended Plugins are fully supported by Neomax theme. They well build 
 msgstr ""
 
 #: inc/about/about-neomax.php:109
-msgid "Kirki"
-msgstr ""
-
-#: inc/about/about-neomax.php:109
 msgid "Theme advanced customizer options."
 msgstr ""
 

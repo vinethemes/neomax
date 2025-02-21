@@ -26,12 +26,6 @@ function neomax_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'      => 'Kirki',
-			'slug'      => 'kirki',
-			'required'  => false,
-		),
-
-        array(
             'name'      => 'Mailchimp-for-wp',
             'slug'      => 'mailchimp-for-wp',
             'required'  => false,
