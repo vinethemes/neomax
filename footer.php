@@ -47,7 +47,7 @@
 			</div><!--footer-->
 <div class="footer-copy clearfix">
 
-    <p class="copyright"> <?php if(get_theme_mod('footer_copyright')): echo wp_kses_post(get_theme_mod('footer_copyright', 'Copyright &copy; 2024. All Rights Reserved.')); else: ?> <?php _e( 'Copyright &copy; 2024. All Rights Reserved.', 'neomax' ); ?> <?php endif; ?>  </p>
+    <p class="copyright"> <?php if(get_theme_mod('footer_copyright')): echo wp_kses_post(get_theme_mod('footer_copyright', 'Copyright &copy; 2025. All Rights Reserved.')); else: ?> <?php _e( 'Copyright &copy; 2025. All Rights Reserved.', 'neomax' ); ?> <?php endif; ?>  </p>
 
     <div class="theme-author">
         <?php if(get_theme_mod('footer_designed')): echo wp_kses_post(get_theme_mod('footer_designed')); else:

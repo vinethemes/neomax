@@ -212,7 +212,6 @@
     #wrapper {
         position: relative;
         height: 100%;
-        margin: 0 25px !important;
     }
 
     #main {
@@ -2215,7 +2214,7 @@
     }
 
     .scroll-post .post-category a {
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: .5px;
@@ -2224,7 +2223,7 @@
     .main h2.feat-title {
         margin-top: 20px;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: .5px;
         line-height:34px;
     }
@@ -2242,9 +2241,12 @@
         line-height: 16px;
         text-transform: uppercase;
         color: #fff;
-        display:block;
     }
-
+    .neomax_slides .slider-meta {
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
     span.post-category a{
         color:  #3d55ef;
         font-size: 12px;
@@ -2862,7 +2864,8 @@
         margin: 0;
     }
     .main h2.feat-title {
-        font-size: 25px;
+        font-size: 15px;
+        line-height: 23px;
     }
     .neomax_slides3 h2.feat-title{
         font-size:28px;
@@ -3135,17 +3138,7 @@
         float:right;
     }
 
-    .main .feat-item-wrapper h2.feat-title a{
-        display: inline;
-        background-image: linear-gradient(transparent calc(100% - 1px),#fff 1px);
-        background-repeat: no-repeat;
-        background-size: 0 100%;
-        transition: background-size .3s;
-    }
-    .main .feat-item-wrapper h2.feat-title a:hover {
-        color: #fff;
-        background-size: 100% 100%;
-    }
+    
     .main .neomax_afterslides .feat-item-wrapper h2.feat-title a{
         display: inline;
         background-image: linear-gradient(transparent calc(100% - 1px),#000 1px);
@@ -3457,12 +3450,7 @@
         width: 100%;
         background: linear-gradient(to bottom,transparent 0,rgb(0 0 0 / 40%) 50%,rgb(0 0 0 / 50%) 100%) repeat scroll 0 0 rgb(0 0 0 / 0%);
         padding-top: 100px;
-        padding-bottom: 30px;
         z-index: 9;
-        border-radius:10px;
-        -o-border-radius:10px;
-        -webkit-border-radius:10px;
-        -moz-border-radius:10px;
     }
     .main .slide-wrap{
         position:relative;
@@ -3667,18 +3655,7 @@
     }
 
 
-    .postcomment {
-        display:table-cell;
-        vertical-align: middle;
-    }
-    .slider-meta {
-        margin-left: 4%;
-        display: table;
-    }
-    .post-date {
-        display: table-cell;
-        vertical-align: middle;
-    }
+    
     .slider-meta .postcomment a {
         color: #fff;
         font-size: 10px;
@@ -3693,14 +3670,21 @@
         content: "\f086";
         font-family: 'Font Awesome 5 Free';
         margin-right: 5px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
     .post-metawrap span.post-category {
         display: inline-block;
         vertical-align: middle;
         margin-bottom: 0;
     }
-
+    .scroll-post {
+        margin-right: 10px;
+    }
+    .scroll-post a:before {
+        content: "\f550";
+        font-family: 'Font Awesome 5 Free';
+        margin-right: 5px;
+    }
     .post-metawrap {
         display: block;
         text-align: center;
@@ -3857,9 +3841,7 @@
     .neomax_slides .slider-meta {
         padding-bottom: 20px;
     }
-    .main .neomax_slides .item-slide:hover .feat-item-wrapper {
-        padding-bottom: 50px;
-    }
+    
     /* Hover CSS Slider1 */
     .neomax_slides .image-slide a {
         position: relative;
@@ -4449,12 +4431,7 @@
     /* Small Slider End */
 
     /* Main Slider Start */
-    .slider-wrapper23.main {
-        max-width: 1550px;
-        margin: 0 auto;
-        font-size: 0;
-        overflow: hidden;
-    }
+    
     .neomax_beforeslides.container {
         display: inline-block;
         width: 49%;
@@ -4475,12 +4452,6 @@
     .neomax_afterslides.container img, .neomax_beforeslides.container img, .main .image-slide a img {
         max-width:100%;
 
-    }
-    .main .image-slide a {
-        border-radius:10px;
-        -o-border-radius:10px;
-        -webkit-border-radius:10px;
-        -moz-border-radius:10px;
     }
 
     .main .neomax_beforeslides h2.feat-title, .main .neomax_afterslides h2.feat-title {
@@ -4512,7 +4483,7 @@
     }
 
     .main .neomax_slides .image-slide a img {
-        height: 565px;
+        height: 540px;
         width: 100%;
         object-fit: cover;
     }
@@ -4534,20 +4505,6 @@
         -o-transition:300ms;
         -moz-transition:300ms;
         -webkit-transition:300ms;
-    }
-
-    .main .slider-meta{
-        margin-left: 0;
-        opacity:.8;
-        margin-top: 10px;
-    }
-    .main .neomax_slides .slider-meta {margin-top:20px}
-    .neomax_slides .scroll-post .post-category a {
-        background: #ff0000;
-        padding: 3px 6px;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
     }
 
     .slider-dots {
@@ -4639,7 +4596,7 @@
     .post-list .post:last-child {
         margin-bottom: 5px;
     }
-    #sidebar a:not(:has(img)), #footer a:not(:has(img))  {
+    .side-pop-content a {
         color: #000;
         display: inline;
         background-image: linear-gradient(transparent calc(100% - 1px),#000 1px);
@@ -4648,12 +4605,10 @@
         transition: background-size .3s;
     }
 
-    #sidebar a:hover, #footer a:hover {
+    .side-pop-content a:hover {
         color: #000;
         background-size: 100% 100%;
     }
-
-
 
     .post-metawrap {
         display: table;
@@ -5276,3 +5231,135 @@
     body.home .neomax-top-bar.header2 {
          border: none;
      }
+
+
+
+
+
+     
+    /* START mcustomscrollbar horizontal slider */
+
+
+    /* Main container layout */
+    .neomax_slides .main-wrap {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 550px;
+  }
+  
+  /* Small items layout */
+  .neomax_slides .main-wrap .small-items {
+    width: 268px;
+    height: 268px;
+    overflow: hidden;
+    position: relative;
+    margin: 2px 4px 2px 0;
+    flex-shrink: 0;
+  }
+  
+  /* Large items layout */
+  .neomax_slides .main-wrap .large-items {
+    width: 360px;
+    height: auto;
+    position: relative;
+    margin: 2px 4px 2px 0;
+    flex-shrink: 0;
+  }
+  
+  /* Video/image overlay inside small items */
+  .neomax_slides .main-wrap .small-items a img,
+  .neomax_slides .main-wrap .small-items a img {
+    height: 270px !important;
+    display: block;
+    position: relative;
+  }
+  
+  /* Overlay effect */
+  .neomax_slides a img:before,
+  .neomax_slides a img:before {
+    content: "";
+    opacity: 0.4;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  
+  /* Item meta info (if you have these inside) */
+  .neomax_slides .main-wrap .itemtopinfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .neomax_slides .main-wrap .item-info {
+    margin: 20px;
+  }
+  
+  /* Optional: comment count style */
+  .neomax_slides span.comments-count {
+    font-size: 12px;
+    margin-left: 15px;
+    color: #fff;
+  }
+  
+
+
+    /* START mcustomscrollbar horizontal slider */
+
+    .small-items:nth-last-child(2), .small-items:nth-last-child(1) {
+    margin-right: 2px;
+    }
+    .large-items:last-child {margin-right:2px;}
+    
+    .mCustomScrollBox {
+    display: block;
+    }
+    .mCSB_scrollTools {
+    opacity: 0.5;
+    z-index:1;
+    height:20px;
+    }
+    .mCSB_horizontal.mCSB_inside>.mCSB_container {
+    margin-bottom: 20px;
+    }
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #c00 !important;
+    border-radius: 0;
+    }
+    .mCSB_scrollTools .mCSB_draggerRail {
+    background-color: rgba(0,0,0,0.1);
+    }
+    .os-host {
+    padding-bottom: 20px;
+    }
+    .os-scrollbar-horizontal {
+    height: 4px;
+    }
+    .os-scrollbar-horizontal:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: rgba(0,0,0,0.1);
+    top: 1px;
+    }
+    .os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+    background-color: #c00;
+    opacity: 0.5;
+    }
+    .os-scrollbar:hover>.os-scrollbar-track>.os-scrollbar-handle, .os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle.active {
+    background-color: #c00;
+    opacity: 1;
+    }
+    .mCSB_scrollTools.mCSB_scrollTools_horizontal a+.mCSB_draggerContainer{margin:0;}
+   
+    /* END mcustomscrollbar horizontal slider */
+

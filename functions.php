@@ -105,6 +105,12 @@ function neomax_scripts() {
 	//Fitvids
 	wp_enqueue_script( 'neomax-jquery-fitvids', get_template_directory_uri() . '/includes/js/fitvid/jquery.fitvids.js', array( 'jquery' ), '1.0.3', true );
 
+    //mCustom Scroll bar css
+    wp_enqueue_style( 'neomax-mcustomscrollbar-css', get_template_directory_uri() . '/includes/css/mcustomscrollbar/jquery.mCustomScrollbar.min.css', array(), '3.0.6', 'screen' );
+
+    //mCustom Scroll bar
+    wp_enqueue_script( 'neomax-mcustomscrollbar-js', get_template_directory_uri() . '/includes/js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), '3.0.6', true );
+
 	//matchheight
     wp_enqueue_script( 'neomax-jquery-matchheight', get_template_directory_uri() . '/includes/js/matchheight/matchheight.js', array( 'jquery' ), $version, true );
 
@@ -119,10 +125,6 @@ function neomax_scripts() {
 
     //Load More Scripts
     wp_enqueue_script( 'neomax-load-more-js', get_template_directory_uri() . '/includes/js/custom/load-more-script.js', array( 'jquery' ), $version, true );
-
-
-    //Slickslider
-    wp_enqueue_script( 'neomax-slickslider-js', get_template_directory_uri() . '/includes/js/slickslider/slick.min.js', array( 'jquery' ), '1.8.0', true );
 
     //Theiastickysidebar
     wp_enqueue_script( 'neomax-resizesensor-js', get_template_directory_uri() . '/includes/js/theiastickysidebar/ResizeSensor.min.js', array( 'jquery' ), '1.5.0', true );
@@ -465,6 +467,18 @@ function neomax_getCategory()
 //theme options
 include(get_template_directory() . '/neomax_custom_controller.php');
 include(get_template_directory() . '/customizer_style.php');
+
+
+
+
+/**
+ * Time Ago
+ * */
+function time_ago_custom($time) {
+    $time_diff = human_time_diff(strtotime($time), current_time('timestamp'));
+    return $time_diff . ' ago';
+}
+
 
 
 

@@ -4,23 +4,16 @@ jQuery(document).ready(function( $ ) {
 
     $('.post-wrap.grid .post').matchHeight();
 
-    //Slick slider
 
 
-    $('.main .neomax_slides').slick({
-        dots: true,
-        infinite: true,
-        speed: 750,
-        fade: true,
-        autoplay: true,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        autoplaySpeed: 5000,
-        slidesToShow: 1,
-        slidesToScroll:1,
-        arrows:false,
-        dotsClass: "slider-dots"
-    });
+   $('.slider-wrapper23.main.slider .neomax_slides').mCustomScrollbar({
+            axis: 'x',
+            scrollButtons: { enable: true },
+            mouseWheel: { enable: true, axis: 'x', preventDefault: true },
+            advanced: { autoExpandHorizontalScroll: true },
+            alwaysShowScrollbar:2,
+            scrollInertia: 200,
+          });
 
         $('#content, #sidebar').theiaStickySidebar({
             // Settings

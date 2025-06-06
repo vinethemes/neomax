@@ -586,7 +586,7 @@
         $wp_customize->add_setting(
             'footer_copyright',
             array(
-                'default'     => 'Copyright 2024.',
+                'default'     => 'Copyright 2025.',
                 'sanitize_callback' => 'sanitize_text_field'
             )
         );

@@ -238,11 +238,7 @@
     .neomax_afterslides .item-slide, .neomax_beforeslides .item-slide{
         margin-bottom:25px;
     }
-    .main .neomax_slides .image-slide a img{
-        height:450px;
-    }
-
-
+   
     .small .neomax_slides h2.feat-title {
         margin-bottom: 0;
     }
@@ -258,9 +254,8 @@
     .post-wrap.clearfix.grid {
         width: 100%;
     }
-    .neomax_slides .item-slide {
-        width: 49%;
-    }
+    
+
     .neomax_slides h2.feat-title{
         margin-top:10px;
         margin-bottom:20px;
@@ -489,9 +484,7 @@
     .neomax-top-bar.header2 .header-inside {
         max-width: 70%;
     }
-    .neomax_slides .image-slide a img {
-        height: 200px !important;
-    }
+    
     .neomax_slides h2.feat-title {
         font-size: 16px;
         line-height: 22px;
@@ -612,9 +605,7 @@
     .post-wrap.grid .post {
         width: 100% !important;
     }
-    .neomax_slides .image-slide a img {
-        height: 200px !important;
-    }
+   
 
     .neomax_slides .scroll-post .post-category a {
         font-size: 10px !important;
