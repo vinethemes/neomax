@@ -4,6 +4,34 @@
         object-fit: cover;
     }
 }
+@media only screen and (min-width:1580px) {
+    .two-row-grid-section, #content-wrap, .highlight-slider-section {
+        max-width: 1530px;
+    }
+}
+@media only screen and (min-width:1780px) {
+    .two-row-grid-section, #content-wrap, .highlight-slider-section  {
+        max-width: 1746px;
+    }
+}
+@media only screen and (max-width:1579px) {
+    .two-row-grid-section, #content-wrap, .highlight-slider-section{
+        max-width: 1200px;
+    }
+    .two-row-grid-section .neomax_slides {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+@media only screen and (max-width: 1205px) and (min-width: 1025px) {
+    .two-row-grid-section, #content-wrap, .highlight-slider-section  {
+        max-width: 1000px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .two-row-grid-section .neomax_slides {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 @media only screen and (max-width:1000px) {
     .small .neomax_slides .image-slide a img {
         height: 90px !important;

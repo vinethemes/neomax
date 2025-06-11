@@ -9,7 +9,15 @@ jQuery(document).ready(function( $ ) {
    $('.slider-wrapper23.main.slider .neomax_slides').mCustomScrollbar({
             axis: 'x',
             scrollButtons: { enable: true },
-            mouseWheel: { enable: true, axis: 'x', preventDefault: true },
+            mouseWheel: { enable: true, axis: 'x' },
+            advanced: { autoExpandHorizontalScroll: true },
+            alwaysShowScrollbar:2,
+            scrollInertia: 200,
+          });
+    $('.slider-wrapper23 .highlight-slider-grid').mCustomScrollbar({
+            axis: 'x',
+            scrollButtons: { enable: true },
+            mouseWheel: { enable: true, axis: 'x' },
             advanced: { autoExpandHorizontalScroll: true },
             alwaysShowScrollbar:2,
             scrollInertia: 200,

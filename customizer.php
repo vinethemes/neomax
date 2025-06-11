@@ -232,10 +232,10 @@
 
 
 
-        //Slick Slider
+        //Main Slider
         $wp_customize->add_section( 'neomax_customizer_mainslider', array(
-            'title'       => esc_html__( 'Main Slider Options', 'neomax' ),
-            'description' => esc_html__( 'Configure your Main Slider here.', 'neomax' ),
+            'title'       => esc_html__( 'Main Featured Slider', 'neomax' ),
+            'description' => esc_html__( 'Configure your Main Featured Slider here.', 'neomax' ),
             'priority'    => 4
         ) );
         $wp_customize->add_setting( 'neomax_customizer_mainslider_disable', array(
@@ -247,7 +247,7 @@
 
         $wp_customize->add_control( 'neomax_mainslider_select_box', array(
             'settings' => 'neomax_customizer_mainslider_disable',
-            'label'    => esc_html__( 'Homepage Main Slider', 'neomax' ),
+            'label'    => esc_html__( 'Homepage Main Featured Slider', 'neomax' ),
             'section'  => 'neomax_customizer_mainslider',
             'type'     => 'select',
             'choices'  => array(
@@ -263,7 +263,7 @@
 
         ) );
         $wp_customize->add_control(new neomax_Customize_Category_Control( $wp_customize, 'neomax_mainslider_category', array(
-                    'label'    => esc_html__( 'Category for Main Slider', 'neomax' ),
+                    'label'    => esc_html__( 'Category for Main Featured Slider', 'neomax' ),
                     'section'  => 'neomax_customizer_mainslider',
                     'settings' => 'neomax_mainslider_category',
                     'priority'	 => 6
@@ -273,56 +273,24 @@
 
 
         $wp_customize->add_setting( 'neomax_mainslider_slides', array(
-            'default' => '3',
+            'default' => '12',
             'sanitize_callback'	=> 'absint',
             'section'  => 'neomax_customizer_mainslider',
         ) );
 
-        $wp_customize->add_control( 'neomax_mainslider_slides', array(
-                'label'      => esc_html__('Number of Posts for Main Slider','neomax'),
-                'section'    => 'neomax_customizer_mainslider',
-                'settings'   => 'neomax_mainslider_slides',
-                'type'		 => 'number',
-                'priority'	 => 8
-            )
-        );
-
-        $wp_customize->add_setting( 'neomax_slider_designs', array(
-            'default'    => 'Slider1',
-            'section'  => 'neomax_customizer_mainslider',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback'	=> 'neomax_sanitize_radio',
-        ) );
-
-        $wp_customize->add_control( 'neomax_slider_designs', array(
-            'type' => 'radio',
-            'label'    => esc_html__( 'Slider Designs', 'neomax' ),
-            'section'  => 'neomax_customizer_mainslider',
-            'choices'  => array(
-                'Slider1'  => esc_html__( 'Modern Slider', 'neomax' ),
-                'Slider2' => esc_html__( 'Grid View (Only in Premium Version)', 'neomax' ),
-                'Slider3' => esc_html__( 'Carousel (Only in Premium Version)', 'neomax' ),
-            ),
-            'priority' => 9
-        ) );
-
-        $wp_customize->add_setting( 'neomax_afterslider_category', array(
-            'default' => '0',
-            'sanitize_callback'	=> 'absint',
-            'section'  => 'neomax_customizer_mainslider',
-
-        ) );
-        $wp_customize->add_control(new neomax_Customize_Category_Control( $wp_customize, 'neomax_afterslider_category', array(
-                    'label'    => esc_html__( 'Category for After Slider Posts', 'neomax' ),
-                    'section'  => 'neomax_customizer_mainslider',
-                    'settings' => 'neomax_afterslider_category',
-                    'priority'	 => 10
+        $wp_customize->add_control(new neomax_Customize_Number_Control($wp_customize, 'neomax_mainslider_slides', array(
+                    'label'      => esc_html__('Number of Posts for Main Featured Slider','neomax'),
+                    'section'    => 'neomax_customizer_mainslider',
+                    'settings'   => 'neomax_mainslider_slides',
+                    'type'		 => 'number',
+                    'priority'	 => 8
                 )
             )
         );
 
+        
 
-
+        
         // Pro Version
         $wp_customize->add_setting( 'pro_version_colors6', array(
             'sanitize_callback' => 'neomax_sanitize_custom_control'
@@ -339,90 +307,277 @@
         );
 
 
-        //Small Slider
-        $wp_customize->add_section( 'neomax_customizer_slider', array(
-            'title'       => esc_html__( 'Small Slider Options', 'neomax' ),
-            'description' => esc_html__( 'Configure your Small Slider here.', 'neomax' ),
-            'priority'    => 5
-        ) );
-        $wp_customize->add_setting( 'neomax_customizer_slider_disable', array(
-            'default'    => 'enable',
-            'section'  => 'neomax_customizer_slider',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback'	=> 'neomax_sanitize_radio',
-        ) );
-
-        $wp_customize->add_control( 'neomax_slider_select_box', array(
-            'settings' => 'neomax_customizer_slider_disable',
-            'label'    => esc_html__( 'Small Slider (Only in Premium Version)', 'neomax' ),
-            'section'  => 'neomax_customizer_slider',
-            'type'     => 'select',
-            'choices'  => array(
-                'enable'  => esc_html__( 'Enable', 'neomax' ),
-                'disable' => esc_html__( 'Disable', 'neomax' ),
-            ),
-            'priority' => 5
-        ) );
-        $wp_customize->add_setting( 'neomax_slider_category', array(
-            'default' => '0',
-            'sanitize_callback'	=> 'absint',
-            'section'  => 'neomax_customizer_slider',
-
-        ) );
-        $wp_customize->add_control(new neomax_Customize_Category_Control( $wp_customize, 'neomax_slider_category', array(
-                    'label'    => esc_html__( 'Category for Small Slider', 'neomax' ),
-                    'section'  => 'neomax_customizer_slider',
-                    'settings' => 'neomax_slider_category',
-                    'priority'	 => 6
-                )
-            )
-        );
+        
 
 
-        $wp_customize->add_setting( 'neomax_slider_category', array(
-            'default' => '0',
-            'sanitize_callback'	=> 'absint',
-            'section'  => 'neomax_customizer_slider',
 
-        ) );
-        $wp_customize->add_control(new neomax_Customize_Category_Control( $wp_customize, 'neomax_slider_category', array(
-                    'label'    => esc_html__( 'Category for Slider', 'neomax' ),
-                    'section'  => 'neomax_customizer_slider',
-                    'settings' => 'neomax_slider_category',
-                    'priority'	 => 7
-                )
-            )
-        );
 
-        $wp_customize->add_setting( 'neomax_slider_slides', array(
-            'default' => '4',
-            'sanitize_callback'	=> 'absint',
-            'section'  => 'neomax_customizer_slider',
-        ) );
+// Below Slider Grid (2-Row) Section
+$wp_customize->add_section('neomax_below_slider_grid', array(
+    'title'    => esc_html__('Below Slider - Grid 2-Row', 'neomax'),
+    'priority' => 5,
+));
 
-        $wp_customize->add_control( 'neomax_slider_slides', array(
-                'label'      => esc_html__('Number of Posts for Small Slider','neomax'),
-                'section'    => 'neomax_customizer_slider',
-                'settings'   => 'neomax_slider_slides',
-                'type'		 => 'number',
-                'priority'	 => 8
-            )
-        );
+// Enable/Disable
+$wp_customize->add_setting('neomax_below_slider_enable', array(
+    'default'           => 'enable',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('neomax_below_slider_enable', array(
+    'label'   => esc_html__('Enable Section', 'neomax'),
+    'section' => 'neomax_below_slider_grid',
+    'type'    => 'select',
+    'choices' => array(
+        'enable'  => esc_html__('Enable', 'neomax'),
+        'disable' => esc_html__('Disable', 'neomax'),
+    ),
+));
+// === BELOW SLIDER SECTION TITLE ===
+$wp_customize->add_setting('neomax_below_slider_title', array(
+    'default'           => esc_html__('New Releases', 'neomax'),
+    'sanitize_callback' => 'sanitize_text_field',
+));
 
-        // Pro Version
-        $wp_customize->add_setting( 'pro_version_colors66', array(
-            'sanitize_callback' => 'neomax_sanitize_custom_control'
-        ) );
-        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
-                'pro_version_colors66', array(
-                    'section'	  => 'neomax_customizer_slider',
-                    'type'		  => 'pro_options',
-                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
-                    'priority'	  => 100
-                )
-            )
-        );
+$wp_customize->add_control('neomax_below_slider_title', array(
+    'label'       => esc_html__('Section Title', 'neomax'),
+    'section'     => 'neomax_below_slider_grid',
+    'type'        => 'text',
+));
+// Category
+$wp_customize->add_setting('neomax_below_slider_category', array(
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control(new neomax_Customize_Category_Control($wp_customize, 'neomax_below_slider_category', array(
+    'label'    => esc_html__('Select Category', 'neomax'),
+    'section'  => 'neomax_below_slider_grid',
+    'settings' => 'neomax_below_slider_category',
+)));
+
+// Number of Posts
+$wp_customize->add_setting('neomax_below_slider_posts', array(
+    'default'           => 10,
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control('neomax_below_slider_posts', array(
+    'label'    => esc_html__('Number of Posts', 'neomax'),
+    'section'  => 'neomax_below_slider_grid',
+    'type'     => 'number',
+    'input_attrs' => array('min' => 1, 'max' => 20),
+));
+
+
+
+
+
+// Large Poster Section
+$wp_customize->add_section('neomax_large_poster_section', array(
+    'title'    => esc_html__('Large Poster Section', 'neomax'),
+    'priority' => 6,
+));
+
+// Enable/Disable
+$wp_customize->add_setting('neomax_large_poster_enable', array(
+    'default'           => 'enable',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('neomax_large_poster_enable', array(
+    'label'   => esc_html__('Enable Section', 'neomax'),
+    'section' => 'neomax_large_poster_section',
+    'type'    => 'select',
+    'choices' => array(
+        'enable'  => esc_html__('Enable', 'neomax'),
+        'disable' => esc_html__('Disable', 'neomax'),
+    ),
+));
+
+// Category
+$wp_customize->add_setting('neomax_large_poster_category', array(
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control(new neomax_Customize_Category_Control($wp_customize, 'neomax_large_poster_category', array(
+    'label'    => esc_html__('Select Category', 'neomax'),
+    'section'  => 'neomax_large_poster_section',
+    'settings' => 'neomax_large_poster_category',
+)));
+
+// Number of Posts
+$wp_customize->add_setting('neomax_large_poster_posts', array(
+    'default'           => 1,
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control('neomax_large_poster_posts', array(
+    'label'    => esc_html__('Number of Posts', 'neomax'),
+    'section'  => 'neomax_large_poster_section',
+    'type'     => 'number',
+    'input_attrs' => array('min' => 1, 'max' => 5),
+));
+
+
+
+// Highlight Slider Section
+$wp_customize->add_section('neomax_highlight_slider', array(
+    'title'    => esc_html__('Highlight Slider', 'neomax'),
+    'priority' => 7,
+));
+
+// Enable/Disable
+$wp_customize->add_setting('neomax_highlight_slider_enable', array(
+    'default'           => 'enable',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('neomax_highlight_slider_enable', array(
+    'label'   => esc_html__('Enable Section', 'neomax'),
+    'section' => 'neomax_highlight_slider',
+    'type'    => 'select',
+    'choices' => array(
+        'enable'  => esc_html__('Enable', 'neomax'),
+        'disable' => esc_html__('Disable', 'neomax'),
+    ),
+));
+$wp_customize->add_setting('neomax_highlight_slider_title', array(
+    'default' => esc_html__('Action Sequences', 'neomax'),
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control('neomax_highlight_slider_title', array(
+    'label'   => esc_html__('Highlight Slider Section Title', 'neomax'),
+    'section' => 'neomax_highlight_slider',
+    'type'    => 'text',
+));
+
+// Category
+$wp_customize->add_setting('neomax_highlight_slider_category', array(
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control(new neomax_Customize_Category_Control($wp_customize, 'neomax_highlight_slider_category', array(
+    'label'    => esc_html__('Select Category', 'neomax'),
+    'section'  => 'neomax_highlight_slider',
+    'settings' => 'neomax_highlight_slider_category',
+)));
+
+// Number of Posts
+$wp_customize->add_setting('neomax_highlight_slider_posts', array(
+    'default'           => 6,
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control('neomax_highlight_slider_posts', array(
+    'label'    => esc_html__('Number of Posts', 'neomax'),
+    'section'  => 'neomax_highlight_slider',
+    'type'     => 'number',
+    'input_attrs' => array('min' => 1, 'max' => 12),
+));
+
+
+
+// Trending Grid Section
+$wp_customize->add_section('neomax_trending_grid', array(
+    'title'    => esc_html__('Trending Grid', 'neomax'),
+    'priority' => 8,
+));
+
+// Enable/Disable
+$wp_customize->add_setting('neomax_trending_grid_enable', array(
+    'default'           => 'enable',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('neomax_trending_grid_enable', array(
+    'label'   => esc_html__('Enable Section', 'neomax'),
+    'section' => 'neomax_trending_grid',
+    'type'    => 'select',
+    'choices' => array(
+        'enable'  => esc_html__('Enable', 'neomax'),
+        'disable' => esc_html__('Disable', 'neomax'),
+    ),
+));
+$wp_customize->add_setting('neomax_trending_grid_title', array(
+    'default' => esc_html__('Trending Now', 'neomax'),
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control('neomax_trending_grid_title', array(
+    'label'   => esc_html__('Trending Grid Section Title', 'neomax'),
+    'section' => 'neomax_trending_grid',
+    'type'    => 'text',
+));
+
+// Category
+$wp_customize->add_setting('neomax_trending_grid_category', array(
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control(new neomax_Customize_Category_Control($wp_customize, 'neomax_trending_grid_category', array(
+    'label'    => esc_html__('Select Category', 'neomax'),
+    'section'  => 'neomax_trending_grid',
+    'settings' => 'neomax_trending_grid_category',
+)));
+
+// Number of Posts
+$wp_customize->add_setting('neomax_trending_grid_posts', array(
+    'default'           => 10,
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control('neomax_trending_grid_posts', array(
+    'label'    => esc_html__('Number of Posts', 'neomax'),
+    'section'  => 'neomax_trending_grid',
+    'type'     => 'number',
+    'input_attrs' => array('min' => 1, 'max' => 20),
+));
+
+
+
+// Footer Related Posts Slider
+$wp_customize->add_section('neomax_footer_related_slider', array(
+    'title'    => esc_html__('Footer Related Posts Slider', 'neomax'),
+    'priority' => 9,
+));
+
+// Enable/Disable
+$wp_customize->add_setting('neomax_footer_related_enable', array(
+    'default'           => 'enable',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('neomax_footer_related_enable', array(
+    'label'   => esc_html__('Enable Slider', 'neomax'),
+    'section' => 'neomax_footer_related_slider',
+    'type'    => 'select',
+    'choices' => array(
+        'enable'  => esc_html__('Enable', 'neomax'),
+        'disable' => esc_html__('Disable', 'neomax'),
+    ),
+));
+$wp_customize->add_setting('neomax_footer_related_title', array(
+    'default' => esc_html__('You May Also Like', 'neomax'),
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control('neomax_footer_related_title', array(
+    'label'   => esc_html__('Footer Related Slider Title', 'neomax'),
+    'section' => 'neomax_footer_related_slider',
+    'type'    => 'text',
+));
+
+// Category
+$wp_customize->add_setting('neomax_footer_related_category', array(
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control(new neomax_Customize_Category_Control($wp_customize, 'neomax_footer_related_category', array(
+    'label'    => esc_html__('Select Category', 'neomax'),
+    'section'  => 'neomax_footer_related_slider',
+    'settings' => 'neomax_footer_related_category',
+)));
+
+// Number of Posts
+$wp_customize->add_setting('neomax_footer_related_posts', array(
+    'default'           => 10,
+    'sanitize_callback' => 'absint',
+));
+$wp_customize->add_control('neomax_footer_related_posts', array(
+    'label'    => esc_html__('Number of Posts', 'neomax'),
+    'section'  => 'neomax_footer_related_slider',
+    'type'     => 'number',
+    'input_attrs' => array('min' => 1, 'max' => 20),
+));
+
+
 
 
 

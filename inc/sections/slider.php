@@ -8,7 +8,7 @@
 ?>
 
     <!--  scroller -->
-<?php if (is_home() && get_theme_mod('neomax_customizer_mainslider_disable') != 'disable') {
+<?php if ( get_theme_mod('neomax_customizer_mainslider_disable') != 'disable') {
 
     if (get_theme_mod('neomax_slider_designs') == 'Slider1') { ?>
 
@@ -50,23 +50,53 @@ while ($neomax_featured_list_posts->have_posts()) : $neomax_featured_list_posts-
     ?>
     <div class="item-slide">
         <div class="slide-wrap">
-            <?php 
-            if (has_post_thumbnail()) {
-                $image_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
-                $image_alt = !empty($image_alt) ? $image_alt : get_the_title(get_post_thumbnail_id($post->ID));
-                $neomax_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $neomax_image_size); ?>
-                <div class="image-slide">
-                    <a href="<?php echo esc_url(get_permalink()); ?>">
-                        <img src="<?php echo $neomax_image[0]; ?>" alt="<?php echo esc_attr($image_alt); ?>" width="<?php echo $neomax_image[1]; ?>" height="<?php echo $neomax_image[2]; ?>" />
-                    </a>
-                </div>
-            <?php } else { ?>
-                <div class="image-slide">
-                    <a href="<?php echo esc_url(get_permalink()); ?>">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/slider-default.png'); ?>" alt="<?php esc_attr_e('No Image', 'neomax'); ?>" width="300" height="200" />
-                    </a>
-                </div>
-            <?php } ?>
+            
+            
+
+
+
+
+
+
+
+
+<?php
+$video_thumb = neomax_get_embed_thumbnail(get_the_ID());
+
+
+if (!empty($video_thumb)) {
+    ?>
+    <div class="image-slide" style="position: relative;">
+        <a href="<?php the_permalink(); ?>">
+            <img src="<?php echo esc_url($video_thumb); ?>" alt="<?php the_title_attribute(); ?>" width="300" height="200" />
+        </a>
+        <div class="poster-play-icon">
+            <a href="<?php the_permalink(); ?>"><i class="fa fa-play"></i></a>
+        </div>
+    </div>
+<?php
+} elseif (has_post_thumbnail()) {
+    $image_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
+    $image_alt = !empty($image_alt) ? $image_alt : get_the_title(get_post_thumbnail_id($post->ID));
+    $neomax_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $neomax_image_size); ?>
+    <div class="image-slide">
+        <a href="<?php echo esc_url(get_permalink()); ?>">
+            <img src="<?php echo esc_url($neomax_image[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="<?php echo $neomax_image[1]; ?>" height="<?php echo $neomax_image[2]; ?>" />
+        </a>
+    </div>
+<?php
+} else {
+    ?>
+    <div class="image-slide" style="position: relative;">
+        <a href="<?php the_permalink(); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/slider-default.png'); ?>" alt="<?php esc_attr_e('No Image', 'neomax'); ?>" width="300" height="200" />
+        </a>
+        <div class="poster-play-icon">
+            <a href="<?php the_permalink(); ?>"><i class="fa fa-play"></i></a>
+        </div>
+    </div>
+<?php } ?>
+
 
             <div class="feat-item-wrapper">
                 <div class="feat-overlay">

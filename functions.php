@@ -40,7 +40,9 @@ function neomax_setup() {
     add_theme_support( "title-tag" );
     add_image_size( 'neomax-large-image', 9999, 9999, false  );// Large Post Image
     add_image_size( 'neomax-medium-image', 600, 600, true  );// Large Post Image
+    add_image_size( 'neomax-twogrid-image', 250, 300, true  );// Two Grid Post Image
     add_image_size( 'neomax-slider-image', 900, 600, true  );// Large Post Image
+        add_image_size( 'neomax-video-thumb', 480, 270, true ); // 16:9 ratio
     add_image_size( 'neomax-featured-image', 150, 150, false  );// Large Post Image
     add_image_size( 'neomax-small-image', 715, 500, false  );// Large Post Image
     add_image_size( 'neomax-widget-small-thumb', 100, 100, true  );// Large Post Image
@@ -518,3 +520,111 @@ add_action( 'wp_footer', function () {   if( !is_admin() ) {  ?>
 
 
 
+
+
+function has_video_embed($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+
+    $content = get_post_field('post_content', $post_id);
+
+    return preg_match('/youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com/', $content);
+}
+
+function get_first_video_embed($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+
+    $content = get_post_field('post_content', $post_id);
+    $blocks = parse_blocks($content);
+
+    foreach ($blocks as $block) {
+        if (
+            $block['blockName'] === 'core/embed' ||
+            strpos($block['blockName'], 'core-embed/') === 0
+        ) {
+            if (!empty($block['attrs']['url'])) {
+                // Force embed using wp_oembed_get
+                return '<div class="video-embed">' . wp_oembed_get($block['attrs']['url'], ['autoplay' => 1]) . '</div>';
+            }
+        }
+
+        // Handle core/video blocks
+        if ($block['blockName'] === 'core/video' && !empty($block['innerHTML'])) {
+            return '<div class="video-embed">' . $block['innerHTML'] . '</div>';
+        }
+    }
+
+    // Fallback: detect any YouTube/Vimeo link and autoembed
+    if (preg_match('/https?:\/\/(www\.)?(youtube\.com|youtu\.be|vimeo\.com)\/[^\s"]+/', $content, $match)) {
+        return '<div class="video-embed">' . wp_oembed_get($match[0], ['autoplay' => 1]) . '</div>';
+    }
+
+    return '';
+}
+
+add_filter('oembed_result', 'autoplay_video_embeds', 10, 3);
+function autoplay_video_embeds($html, $url, $args) {
+    if (strpos($url, 'youtube.com') !== false ) {
+        $html = preg_replace('/src="([^"]+)"/', 'src="$1&autoplay=1&mute=1"', $html);
+    }
+    else if (strpos($url, 'vimeo.com') !== false) {
+        $html = preg_replace('/src="([^"]+)"/', 'src="$1&autoplay=1&muted=1"', $html);
+    }
+    return $html;
+}
+function remove_first_video_block($content) {
+    $blocks = parse_blocks($content);
+    $output = '';
+    $removed = false;
+
+    foreach ($blocks as $block) {
+        // Remove only the first embed or video block
+        if (
+            !$removed &&
+            (
+                $block['blockName'] === 'core/embed' ||
+                strpos($block['blockName'], 'core-embed/') === 0 ||
+                $block['blockName'] === 'core/video'
+            )
+        ) {
+            $removed = true;
+            continue; // Skip this block
+        }
+
+        $output .= render_block($block);
+    }
+
+    return $output;
+}
+
+
+function neomax_get_embed_thumbnail($post_id, $size = 'hqdefault') {
+    $content = get_post_field('post_content', $post_id);
+
+    // Match common YouTube video URLs
+    if (preg_match('/https?:\/\/(?:www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $content, $yt_match)) {
+        $video_id = $yt_match[2];
+
+        // Ensure valid size option
+        $size = ($size === 'maxresdefault') ? 'maxresdefault' : 'hqdefault';
+        
+        return "https://img.youtube.com/vi/{$video_id}/{$size}.jpg";
+    }
+
+    // Match Vimeo video URLs
+    if (preg_match('/https?:\/\/(?:www\.)?vimeo\.com\/([0-9]+)/', $content, $vimeo_match)) {
+        $video_id = $vimeo_match[1];
+        $response = wp_remote_get("https://vimeo.com/api/v2/video/{$video_id}.json");
+        if (!is_wp_error($response)) {
+            $body = json_decode(wp_remote_retrieve_body($response), true);
+            if (!empty($body[0]['thumbnail_large'])) {
+                return esc_url($body[0]['thumbnail_large']);
+            }
+        }
+    }
+
+    return false;
+}

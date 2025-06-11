@@ -30,6 +30,38 @@ if (class_exists('WP_Customize_Control')) {
     }
 }
 
+add_action( 'customize_register', 'neomax_customize_register' );
 
+function neomax_customize_register($wp_customize) {
+
+    class neomax_Customize_Number_Control extends WP_Customize_Control {
+        public $type = 'number';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <input type="number" name="quantity" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>" style="width:70px;">
+            </label>
+            <?php
+        }
+    }
+
+    class Customize_CustomCss_Control extends WP_Customize_Control {
+        public $type = 'custom_css';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <textarea style="width:100%; height:150px;" <?php $this->link(); ?>><?php echo $this->value(); ?></textarea>
+            </label>
+            <?php
+        }
+    }
+
+
+
+}
 
 ?>
