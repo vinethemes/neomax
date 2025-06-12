@@ -1,6 +1,6 @@
 jQuery(document).ready(function( $ ) {
 
-    //matchheight
+    //matchheight 
 
     $('.post-wrap.grid .post').matchHeight();
 
@@ -13,7 +13,7 @@ jQuery(document).ready(function( $ ) {
             advanced: { autoExpandHorizontalScroll: true },
             alwaysShowScrollbar:2,
             scrollInertia: 200,
-          });
+    });
     $('.slider-wrapper23 .highlight-slider-grid').mCustomScrollbar({
             axis: 'x',
             scrollButtons: { enable: true },
@@ -21,12 +21,28 @@ jQuery(document).ready(function( $ ) {
             advanced: { autoExpandHorizontalScroll: true },
             alwaysShowScrollbar:2,
             scrollInertia: 200,
-          });
+    });
+    $('.slider-wrapper23 .footer-slider-grid').mCustomScrollbar({
+            axis: 'x',
+            scrollButtons: { enable: true },
+            mouseWheel: { enable: true, axis: 'x' },
+            advanced: { autoExpandHorizontalScroll: true },
+            alwaysShowScrollbar:2,
+            scrollInertia: 200,
+    });
 
-        $('#content, #sidebar').theiaStickySidebar({
-            // Settings
-            additionalMarginTop: 30
+
+
+      $('.share-toggle-btn').on('click', function () {
+        $(this).closest('.video-meta-wrap').find('.share-icons').toggleClass('visible');
+    });
+    $('.copy-link-btn').on('click', function () {
+        const $copyConfirm = $(this).siblings('.copy-confirmation');
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            $copyConfirm.fadeIn().delay(2500).fadeOut();
         });
+    });
+
 
 
 	    $('.ribbon').fadeIn();
@@ -36,12 +52,14 @@ jQuery(document).ready(function( $ ) {
     });
 
     // Menu
-    $('.neomax-top-bar .menu-wrap .main-nav').slicknav({
-        prependTo:'.neomax-top-bar .top-bar',
-        label:'',
-        nestedParentLinks:false,
-        allowParentLinks: true
-    });
+   
+   $('#main-nav').hcOffcanvasNav({
+        customToggle: $('.toggle'),
+        levelTitles: true,
+        levelTitleAsBack: true,
+		pushContent: '#wrapper'
+      });
+
 
 		$( window ).resize( function() {
 			var browserWidth = $( window ).width();

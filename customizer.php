@@ -190,29 +190,6 @@
         //Top Information Bar
 
 
-        // Header Design
-        $wp_customize->add_section( 'neomax_header_designs', array(
-            'title'       => esc_html__( 'Header Designs', 'neomax' ),
-            'description' => esc_html__( 'Select Header Designs from here.', 'neomax' ),
-            'priority'    => 3
-        ) );
-
-        $wp_customize->add_setting( 'neomax_header_design_layout', array(
-            'default' => 'header1',
-            'section'  => 'neomax_header_designs',
-            'sanitize_callback'	=> 'neomax_sanitize_radio',
-        ) );
-        $wp_customize->add_control( 'neomax_header_design_layout', array(
-            'type' => 'radio',
-            'label'    => esc_html__( 'Header Design Layout', 'neomax' ),
-            'section'  => 'neomax_header_designs',
-            'choices'  => array(
-                'header1'  => esc_html__( 'Header 1', 'neomax' ),
-                'header2' => esc_html__( 'Header 2', 'neomax' ),
-            ),
-            'priority' => 10
-        ) );
-
         // Pro Version
         $wp_customize->add_setting( 'pro_version_colors7', array(
             'sanitize_callback' => 'neomax_sanitize_custom_control'
@@ -466,7 +443,6 @@ $wp_customize->add_control('neomax_highlight_slider_posts', array(
     'type'     => 'number',
     'input_attrs' => array('min' => 1, 'max' => 12),
 ));
-
 
 
 // Trending Grid Section
@@ -920,8 +896,6 @@ function neomax_sanitize_image( $file, $setting ) {
         'grid' => 'grid',
         'enable' => 'enable',
         'disable' => 'disable',
-        'header1' => 'header1',
-        'header2' => 'header2',
     );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;

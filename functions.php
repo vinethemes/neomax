@@ -101,7 +101,7 @@ function neomax_scripts() {
 	wp_enqueue_style( 'neomax-style', get_stylesheet_uri() );
 
 	//Font Awesome
-    wp_enqueue_style( 'neomax-font-awesome', get_template_directory_uri() . '/includes/css/font-awesome.min.css', array(), '5.15.4', 'screen' );
+    wp_enqueue_style( 'neomax-font-awesome', get_template_directory_uri() . '/includes/css/font-awesome.min.css', array(), '6.5.1', 'screen' );
     //grid css
 
 	//Fitvids
@@ -113,6 +113,11 @@ function neomax_scripts() {
     //mCustom Scroll bar
     wp_enqueue_script( 'neomax-mcustomscrollbar-js', get_template_directory_uri() . '/includes/js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), '3.0.6', true );
 
+    //HC Off-canvas Nav
+    wp_enqueue_style( 'neomax-hc-offcanvas-css', get_template_directory_uri() . '/includes/css/hc-offcanvas/hc-offcanvas-nav.carbon.css', array(), '6.1.5', 'screen' );
+    wp_enqueue_script( 'neomax-hc-offcanvas-js', get_template_directory_uri() . '/includes/js/hc-offcanvas/hc-offcanvas-nav.js', array( 'jquery' ), '6.1.5', true );
+
+    
 	//matchheight
     wp_enqueue_script( 'neomax-jquery-matchheight', get_template_directory_uri() . '/includes/js/matchheight/matchheight.js', array( 'jquery' ), $version, true );
 
@@ -128,15 +133,7 @@ function neomax_scripts() {
     //Load More Scripts
     wp_enqueue_script( 'neomax-load-more-js', get_template_directory_uri() . '/includes/js/custom/load-more-script.js', array( 'jquery' ), $version, true );
 
-    //Theiastickysidebar
-    wp_enqueue_script( 'neomax-resizesensor-js', get_template_directory_uri() . '/includes/js/theiastickysidebar/ResizeSensor.min.js', array( 'jquery' ), '1.5.0', true );
-
-    wp_enqueue_script( 'neomax-theiastickysidebar-js', get_template_directory_uri() . '/includes/js/theiastickysidebar/theia-sticky-sidebar.min.js', array( 'jquery' ), '1.5.0', true );
-
-
-    wp_enqueue_script( 'neomax-jquery-slicknav', get_template_directory_uri() . '/includes/js/slicknav/jquery.slicknav.min.js', array( 'jquery' ), $version, true );
-
-
+    
     wp_register_style('neomax-responsive', get_template_directory_uri() . '/css/responsive.css');
 
     if(!get_theme_mod('neomax_general_responsive')) {
