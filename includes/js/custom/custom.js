@@ -82,21 +82,7 @@ jQuery(document).ready(function( $ ) {
     $('.main-nav li:has(ul)  li:has(ul)>a').append(ico1);
 
 
-    $('.searchwrap a').on('click', function ( e ) {
-        e.preventDefault();
-        $('.display-search-view').toggle('slide');
-
-        $('#modal-1 a.ct_icon.search').toggleClass('inc-zindex');
-        $('#modal-1 a.ct_icon.search i').addClass('fa-search');
-        $('#modal-1 a.ct_icon.search i').removeClass('fa-times-circle');
-		$('a.ct_icon.search.inc-zindex i').addClass('fa-times-circle');
-        $('a.ct_icon.search.inc-zindex i').removeClass('fa-search');
-    });
-
-
-    const open = document.getElementById("open-trigger");
-    const close = document.getElementById("close-trigger");
-
+    
 
 		//FitVids
 		$(".post-content iframe").wrap("<div class='fitvid'/>");
@@ -168,16 +154,26 @@ jQuery(document).ready(function( $ ) {
 
 
 
-    if (open) {
-        open.addEventListener('click', () => MicroModal.show('modal-1', {
-                onShow: () => document.body.classList.add('howdy'),
-            onClose: () => document.body.classList.remove('howdy'),
-            awaitCloseAnimation: true,
-            openClass: 'open'
-    }), false);
-    }
+    function addDarkmodeWidget() {
+  const options = {
+    bottom: '64px',
+    right: '32px',
+    time: '0.5s',
+    mixColor: '#fff',
+    backgroundColor: '#fff',
+    buttonColorDark: '#100f2c',
+    buttonColorLight: '#fff',
+    saveInCookies: true,
+    label: '<i class="fa-solid fa-moon"></i>', // Emoji label for the button
+    autoMatchOsTheme: true // Match system theme by default
+  };
 
-    if (close) {
-        close.addEventListener('click', () => MicroModal.close('modal-1'), false);
-    }
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
+}
+
+window.addEventListener('load', addDarkmodeWidget);
+
+
+
 });

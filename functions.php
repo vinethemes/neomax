@@ -117,7 +117,9 @@ function neomax_scripts() {
     wp_enqueue_style( 'neomax-hc-offcanvas-css', get_template_directory_uri() . '/includes/css/hc-offcanvas/hc-offcanvas-nav.carbon.css', array(), '6.1.5', 'screen' );
     wp_enqueue_script( 'neomax-hc-offcanvas-js', get_template_directory_uri() . '/includes/js/hc-offcanvas/hc-offcanvas-nav.js', array( 'jquery' ), '6.1.5', true );
 
-    
+    //Darkmode.js
+    wp_enqueue_script('neomax-darkmode-js', get_template_directory_uri() . '/includes/js/darkmode/darkmode-js.min.js', array('jquery'), '1.5.7', true);
+
 	//matchheight
     wp_enqueue_script( 'neomax-jquery-matchheight', get_template_directory_uri() . '/includes/js/matchheight/matchheight.js', array( 'jquery' ), $version, true );
 
@@ -149,16 +151,6 @@ function neomax_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'neomax_scripts' );
-
-function neomax_darkmode_script() {
-    wp_enqueue_script('neomax-darkmode-script', get_template_directory_uri() . '/includes/js/darkmode/darkmode.js', array('jquery'), '1.0', true);
-
-    // Pass the ajax_url to script.js
-    wp_localize_script('neomax-darkmode-script', 'neomax_darkmode_script_vars', array(
-        'ajax_url' => admin_url('admin-ajax.php')
-    ));
-}
-add_action('wp_enqueue_scripts', 'neomax_darkmode_script');
 
 
 

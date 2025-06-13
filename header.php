@@ -23,7 +23,7 @@
     </head>
 
     <body <?php body_class(); ?>>
-    <div id="dark-mode-toggle"><i class="fa fa-moon"></i></div>
+    
     <?php
     //wp_body_open hook from WordPress 5.2
     if (function_exists('wp_body_open')) {
@@ -170,52 +170,78 @@
             </div><!-- header inside -->
             <div class="menu-wrap">
 
-                <?php if ( has_nav_menu( 'main' ) ) { ?>
-                    <div class="top-bar">
-                        <div class="menu-wrap-inner">
+            <?php if ( has_nav_menu( 'main' ) ) { ?>
+                <div class="top-bar">
+                    <div class="menu-wrap-inner">
+                        <nav id="main-nav">
                             <?php
-  wp_nav_menu( array(
-    'theme_location' => 'main',
-    'menu_class'     => '', // Optional: remove WP-added class
-    'container'      => 'nav',
-    'container_id'   => 'main-nav',
-    'depth'          => 3, // Allows multi-level nesting
-    'fallback_cb'    => false,
-  ) );
-  ?>
-                        </div>
-                    </div><!-- top bar -->
-                <?php } ?>
+                            wp_nav_menu( array(
+                                'theme_location' => 'main',
+                                'menu_class'     => '',
+                                'container'      => false, // important!
+                                'depth'          => 3,
+                                'fallback_cb'    => false,
+                            ) );
+                            ?>
+                            <!-- Social icons inside #main-nav now -->
+                            <ul class="social-icons">
+                            <?php
+                            $socials = array(
+                                'facebook'  => 'fab fa-facebook-f',
+                                'twitter'   => 'fab fa-x-twitter',
+                                'instagram' => 'fab fa-instagram',
+                                'youtube'   => 'fab fa-youtube',
+                                'telegram'  => 'fab fa-telegram-plane',
+                                'tiktok'    => 'fab fa-tiktok',
+                                'linkedin'  => 'fab fa-linkedin-in',
+                                'pinterest' => 'fab fa-pinterest-p',
+                                'snapchat'  => 'fab fa-snapchat-ghost',
+                                'whatsapp'  => 'fab fa-whatsapp',
+                                'reddit'    => 'fab fa-reddit-alien',
+                                'tumblr'    => 'fab fa-tumblr',
+                                'discord'   => 'fab fa-discord',
+                                'spotify'   => 'fab fa-spotify',
+                                'dribbble'  => 'fab fa-dribbble',
+                                'behance'   => 'fab fa-behance',
+                                'github'    => 'fab fa-github',
+                                'medium'    => 'fab fa-medium',
+                                'slack'     => 'fab fa-slack',
+                                'vk'        => 'fab fa-vk',
+                                'flickr'    => 'fab fa-flickr',
+                                'vimeo'     => 'fab fa-vimeo-v',
+                                'wechat'    => 'fab fa-weixin',
+                                'line'      => 'fab fa-line',
+                            );
 
-                <div class="social-links">
+                            foreach ($socials as $key => $icon) :
+                                $url = get_theme_mod("neomax_social_$key");
+                                if (!empty($url)) :
+                            ?>
+                                <li><a href="<?php echo esc_url($url); ?>" target="_blank"><i class="<?php echo esc_attr($icon); ?>"></i></a></li>
+                            <?php endif; endforeach; ?>
+                        </ul>
 
-                    <div class="socials">
-                        <?php if(!get_theme_mod('neomax_general_search_icon')) : ?>
-                            <button class="button ct_icon search" id="open-trigger" aria-label="Search">
-                                <i class="fa fa-search"></i>
-                            </button>
-
-                            <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-                                <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-
-                                        <main class="modal__content" id="modal-1-content">
-                                            <div id="modal-1-content">
-                                                <?php get_search_form(); ?>
-                                            </div>
-                                        </main>
-
-                                    </div>
-                                    <button class="button" id="close-trigger" aria-label="Close">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        <?php endif; ?>
+                        </nav>
                     </div>
+                </div><!-- .top-bar -->
+            <?php } ?>
+
+            
+            <div class="search-bar">
+
+                <div class="search-wrap">
+                    <?php if(!get_theme_mod('neomax_general_search_icon')) : ?>
+                        
+                        <?php get_search_form(); ?>
+                        
+                    <?php endif; ?>
                 </div>
+            </div>
+            
 
-
+            </div>
+            <div class="submit-video">
+                <a href="<?php echo esc_url(get_theme_mod('neomax_submit_video_url', '/submit-video')); ?>" class="submit-video-btn">Submit Video</a>
             </div>
             </div>
 

@@ -55,14 +55,57 @@ if ($video_embed && $thumbnail_url):
                     </div>
                 </div>
                 <div class="share-icons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/intent/post?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank" title="Post on X"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://wa.me/?text=<?php the_permalink(); ?>" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://t.me/share/url?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                    <button class="copy-link-btn" title="Copy Link"><i class="fas fa-link"></i></button>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <!-- Twitter (X) -->
+                    <a href="https://x.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank" title="Share on X (Twitter)">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/?text=<?php the_permalink(); ?>" target="_blank" title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/share/url?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank" title="Share on Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" target="_blank" title="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <!-- Pinterest -->
+                    <a href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&description=<?php the_title(); ?>" target="_blank" title="Share on Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+
+                    <!-- Reddit -->
+                    <a href="https://www.reddit.com/submit?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" target="_blank" title="Share on Reddit">
+                        <i class="fab fa-reddit-alien"></i>
+                    </a>
+
+                    <!-- Tumblr -->
+                    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=<?php the_permalink(); ?>&title=<?php the_title(); ?>" target="_blank" title="Share on Tumblr">
+                        <i class="fab fa-tumblr"></i>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:?subject=<?php the_title(); ?>&body=<?php the_permalink(); ?>" title="Share via Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                    <!-- Copy Link -->
+                    <a class="copy-link-btn" title="Copy Link">
+                        <i class="fas fa-link"></i>
+                    </a>
                     <span class="copy-confirmation" style="display:none;">Copied!</span>
-                </div>
-                
+                </div>                
 
             </div>
                     </div>

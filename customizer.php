@@ -284,9 +284,73 @@
         );
 
 
-        
+
+    // Social Media Links
+    $wp_customize->add_section('neomax_social_section', array(
+        'title'    => esc_html__('Social Links', 'neomax'),
+        'priority' => 5,
+    ));
+
+    $social_platforms = array(
+        'facebook'  => 'Facebook',
+        'twitter'   => 'Twitter (X)',
+        'instagram' => 'Instagram',
+        'youtube'   => 'YouTube',
+        'telegram'  => 'Telegram',
+        'tiktok'  => 'Tiktok',
+        'linkedin'  => 'Linkedin',
+        'pinterest'  => 'Pinterest',
+        'snapchat'  => 'Snapchat',
+        'whatsapp'  => 'Whatsapp',
+        'reddit'  => 'Reddit',
+        'tumblr'  => 'Tumblr',
+        'discord'  => 'Discord',
+        'spotify'  => 'Spotify',
+        'dribbble'  => 'Dribbble',
+        'behance'  => 'Behance',
+        'github'  => 'Github',
+        'medium'  => 'Medium',
+        'slack'  => 'Slack',
+        'vk'  => 'Vk',
+        'flickr'  => 'Flickr',
+        'vimeo'  => 'Vimeo',
+        'wechat'  => 'WeChat',
+        'line'  => 'LINE',
+    );
+
+    foreach ($social_platforms as $slug => $label) {
+        $wp_customize->add_setting("neomax_social_{$slug}", array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
+        $wp_customize->add_control("neomax_social_{$slug}", array(
+            'label'   => esc_html__("$label URL", 'neomax'),
+            'section' => 'neomax_social_section',
+            'type'    => 'url',
+        ));
+    }    
 
 
+
+
+        // Submit Video Button
+    $wp_customize->add_section('neomax_submit_video_section', array(
+        'title' => __('Submit Video Button', 'neomax'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('neomax_submit_video_url', array(
+        'default' => '/submit-video',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('neomax_submit_video_url_control', array(
+        'label' => __('Submit Video URL', 'neomax'),
+        'section' => 'neomax_submit_video_section',
+        'settings' => 'neomax_submit_video_url',
+        'type' => 'url',
+    ));
 
 
 // Below Slider Grid (2-Row) Section
