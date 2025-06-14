@@ -2602,7 +2602,7 @@
     .to_top {
         z-index: 9999999;
         cursor: pointer;
-        color: #000;
+        color: #fff;
         text-align: center;
         width: 3rem;
         height: 3rem;
@@ -3808,7 +3808,6 @@
 
     body.page div#content {
         padding: 25px;
-        background: #fff;
        
     }
 
@@ -4957,7 +4956,7 @@ h1.video-title {
     max-width: 100%;
     border-radius: 12px;
 }
-a.toggle {
+button.toggle {
     display: flex;
     position: relative;
     flex: 0.1;
@@ -4969,8 +4968,9 @@ a.toggle {
     height: 30px;
     justify-content: center;
     align-items: center;
-    border: 1px solid #e12b5f;
-    padding: 0 10px;
+    border: 2px solid #e12b5f;
+    padding: 0 15px;
+    overflow:hidden;
 }
 .header-inside.clearfix {
     display: flex;
@@ -5059,6 +5059,34 @@ ul.social-icons {
     margin-top: 30px !important;
     padding-top: 10px !important;
 }
+/* Trigger animation on hover */
+button.toggle:hover i {
+animation: moveBars 0.5s ease-in-out forwards;
+}
+@keyframes moveBars {
+0% {
+transform: translateX(0);
+}
+50% {
+transform: translateX(20px); /* Move right */
+opacity: 0; /* Fade out */
+}
+51% {
+transform: translateX(-20px); /* Jump to the left */
+opacity: 0; /* Still hidden */
+}
+100% {
+transform: translateX(0); /* Return to original position */
+opacity: 1; /* Fade in */
+}
+}
+.post-comments:before {
+    content: "\f086";
+    font-family: 'Font Awesome 6 Free';
+    font-size: 10px;
+    margin-right: 5px;
+    color: #888;
+}
 
 
 /* Darkmode css start */
@@ -5138,4 +5166,23 @@ body.darkmode--activated .theme-author a {
 .darkmode-layer--button {
     right: 40px !important;
     bottom: 100px !important;
+}
+body.darkmode--activated code {
+    background: #222;
+}
+
+body.darkmode--activated #content table tr.odd {
+    background: #222;
+}
+body.darkmode--activated .pagelink p {
+    background: #222;
+}
+body.darkmode--activated .post-content a:hover, body.darkmode--activated .comment-text a:hover, .textwidget a:hover {
+    color: #999;
+}
+/* Darkmode css end*/
+
+
+.two-row-grid-section .postcomment a {
+    color: #999;
 }

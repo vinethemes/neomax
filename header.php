@@ -62,7 +62,12 @@
 
         <div class="neomax-top-bar header1">
             <div class="header1wrap">
-                <a class="toggle" href="#"><i class="fa fa-bars"></i></a>
+        <!-- Update your toggle button to remove href -->
+        <button class="toggle" type="button">
+            <i class="fa fa-bars"></i>
+            <span class="screen-reader-text">Menu</span>
+        </button>
+
             <div class="header-inside clearfix">
 
 

@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div id="content-wrap" class="clearfix fullwidth-page">
     <div id="content" class="fullwidth" tabindex="-1">
-        <div class="theiaStickySidebar">
+        
 
             <?php while ( have_posts() ) : the_post(); ?>
                 <article <?php post_class('fullwidth-article'); ?>>
@@ -27,7 +27,7 @@ get_header(); ?>
 
             <?php endwhile; ?>
 
-        </div>
+ 
     </div>
 </div>
 
