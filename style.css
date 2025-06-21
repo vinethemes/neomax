@@ -1,15 +1,15 @@
     /*
     Theme Name: Neomax
     Theme URI: https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/
-    Description: Neomax is a movie & video WordPress theme designed to elevate your website's performance and user experience. This lightweight, mobile-first theme ensures rapid load times with features like lazy loading and asynchronous script loading. Built with clean code and integrated schema markup, Neomax enhances SEO performance, making it a perfect choice for bloggers and content creators. The theme is fully customizable, offering an intuitive customizer, pre-built layouts, and a drag-and-drop builder for effortless design. Advanced blog features include multiple post formats, related posts, and infinite scroll to keep readers engaged. With built-in social media integration, robust comment systems, and email subscription forms, Neomax enhances user interaction and engagement. Regular updates and secure coding practices ensure your site remains safe and up-to-date. Backed by comprehensive documentation and dedicated support, Neomax combines speed, functionality, and aesthetic appeal to deliver an exceptional blogging experience. Theme Demo here https://demo.vinethemes.com/livedemo/neomax.html.
+    Description: Neomax is a lightweight, movie video WordPress theme perfect for video creators, movie bloggers, and content publishers. Designed with performance and SEO in mind, Neomax features clean, accessible code, integrated schema markup, and fast page loads. The theme supports multiple post formats including video, gallery, and standard posts, along with infinite scroll and related posts to enhance user engagement. With full support for the WordPress Customizer, Neomax lets you easily personalize layouts, colors, and typography. It’s translation-ready, responsive, and built to work seamlessly with Gutenberg and popular plugins. Whether you’re building a film review site, a video showcase, or a personal blog, Neomax provides a clean, modern design and all the tools you need to grow your audience. Theme Demo here https://demo.vinethemes.com/neomax/.
 
     Author: VineThemes
     Author URI: https://www.vinethemes.com
     Version: 1.0
-    Tested up to: 6.4
+    Tested up to: 6.8.1
     Requires PHP: 5.6
     Text Domain: neomax
-    Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, flexible-header, custom-menu, editor-style, featured-images, custom-logo, sticky-post, footer-widgets, theme-options, threaded-comments, translation-ready, Blog, News, Full Width Template, Grid Layout, One Column, Post Formats
+    Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, flexible-header, custom-menu, editor-style, featured-images, custom-logo, sticky-post, footer-widgets, theme-options, threaded-comments, translation-ready, blog, news, full-width-template, grid-layout, one-column, post-formats, entertainment
 
     License: GNU General Public License v2.0
     License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -126,7 +126,7 @@
     }
 
     a:hover {
-        color: #3d55ef;
+        color: #e12b5f;
         text-decoration: none;
         -webkit-transition: 300ms ease-in;
         transition: 300ms ease-in;
@@ -241,16 +241,13 @@
         display: block;
         position: relative;
     }
-    .screen-reader-text {
-    }
-    .bypostauthor {}
+
 
     .header-inside {
         max-width: 100%;
         margin: 0 auto;
         padding: 0px;
         display: inline-block;
-        margin-right: 50px;
         vertical-align: middle;
     }
 
@@ -509,11 +506,13 @@
     /* ===[ Post Styles ]=== */
 
     .post {
-        margin: 0 0 8% 0;
+        margin: 0 0 0 0;
         display: inline-block;
         width: 100%;
     }
-
+    .video-grid-container .post{
+        margin: 0 0 8% 0;
+    }
     .post:last-child { margin-bottom: 0 }
 
     .featured-image { width: 100%; }
@@ -737,7 +736,7 @@
 
     .next-prev a { color: #222 }
 
-    .next-prev a:hover { color: #3d55ef; }
+    .next-prev a:hover { color: #e12b5f; }
 
     .next-post, .prev-post { width: 50%; padding: 20px; }
 
@@ -1125,10 +1124,10 @@
     }
 
     #commentform #submit, .wpcf7-submit {
-        border: 1px solid #3d55ef;
+        border: 1px solid #e12b5f;
         color: #ffffff;
         font-size: 11px;
-        background: #3d55ef;
+        background: #e12b5f;
         font-weight: 400;
         padding: 10px 20px;
         
@@ -1227,7 +1226,7 @@
     }
 
     p.reply a {
-         color: #3d55ef;
+         color: #e12b5f;
          font-size: 14px;
          letter-spacing: .5px;
          font-weight: 600;
@@ -1318,7 +1317,7 @@
 
     .fn a { color: #000; }
 
-    .fn a:hover { color:#3d55ef; }
+    .fn a:hover { color:#e12b5f; }
 
     .comment-info {
         margin-bottom: 20px;
@@ -1723,7 +1722,7 @@
         font-size:12px;
     }
     .theme-author a {
-    color:#3d55ef;
+    color:#e12b5f;
     }
 
     /* Tablet and Mobile */
@@ -1737,6 +1736,7 @@
 
     .image-slide {
         line-height:0;
+        overflow: hidden;
     }
 
     .feat-item {
@@ -1809,7 +1809,7 @@
         align-items: baseline;
     }
     span.post-category a{
-        color:  #3d55ef;
+        color:  #e12b5f;
         font-size: 12px;
         text-transform:  uppercase;
         letter-spacing:  1px;
@@ -1954,7 +1954,7 @@
         display: inline-block;
         text-transform: uppercase;
         width: auto;
-        background-color: #3d55ef;
+        background-color: #e12b5f;
         text-align: center;
     }
 
@@ -1966,8 +1966,8 @@
         content: "\f08d";
         left: 0;
         top: 0;
-        font-family: Font Awesome 6 Free;
-        background: #fff;
+        font-family: 'FontAwesome';
+        color: #000;
         width: 40px;
         height: 40px;
         line-height: 40px;
@@ -2263,7 +2263,7 @@
     }
     .side-item-text .post-category a {
         background-image: none !important;
-        color: #3d55ef !important;
+        color: #e12b5f !important;
     }
     .footer-inside span.post-category{
         margin:inherit;
@@ -2272,7 +2272,7 @@
     .widget_categories span {
         float: right;
         padding: 0 5px;
-        background: #3d55ef;
+        background: #e12b5f;
         color: #fff;
         border-radius:50%;
         -o-border-radius:50%;
@@ -2616,7 +2616,7 @@
     }
 
     #credits:hover {
-        background: #3d55ef;
+        background: #e12b5f;
     }
 
     /*Back to Top Ends*/
@@ -2676,7 +2676,7 @@
         text-transform: uppercase;
     }
     .pagination .nav-links a.page-numbers:hover, .pagination .nav-links span:hover{
-        color:#3d55ef;
+        color:#e12b5f;
     }
     .pagination .nav-links span.page-numbers.dots {
         border: none;
@@ -2851,7 +2851,7 @@
         line-height:24px;
     }
     .single .bar-categories a {
-        color: #3d55ef;
+        color: #e12b5f;
     }
 
 
@@ -2964,7 +2964,7 @@
 
     }
     .side-pop.list:hover .side-count{
-        color: #3d55ef;
+        color: #e12b5f;
     }
     .side-pop.list .side-count {
         transition:300ms;
@@ -3083,7 +3083,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        background: #3d55ef;
+        background: #e12b5f;
         content: "";
         transition: transform .4s ease;
         -webkit-transform: scaleX(0);
@@ -3091,23 +3091,6 @@
         transform: scaleX(0);
     }
 
-    #content .entry-title a{
-        transition:300ms;
-        -o-transition:300ms;
-        -webkit-transition:300ms;
-        -moz-transition:300ms;
-        color: #000;
-        display: inline;
-        background-image: linear-gradient(transparent calc(100% - 1px),#000 1px);
-        background-repeat: no-repeat;
-        background-size: 0 100%;
-        transition: background-size .3s;
-    }
-    #content .entry-title a:hover{
-        color: #000;
-        background-size: 100% 100%;
-
-    }
 
     .post-list .post .featured-image img{
         transition: transform 300ms ease;
@@ -3164,7 +3147,7 @@
     }
 
     .share .tags a:hover {
-        color: #3d55ef;
+        color: #e12b5f;
     }
     p.neomax_name {
         margin-bottom: 15px;
@@ -3181,7 +3164,7 @@
         letter-spacing: 1px;
     }
     .featured-box-item:hover h4 {
-        background: #3d55ef;
+        background: #e12b5f;
         color:#fff;
     }
     .featured-box-item h4{
@@ -3191,7 +3174,7 @@
         -webkit-transition:300ms;
     }
     .post-content a, .comment-text a, .textwidget a {
-        color: #3d55ef;
+        color: #e12b5f;
         text-decoration: underline;
     }
 
@@ -3303,7 +3286,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        background: #3d55ef;
+        background: #e12b5f;
         content: "";
         transition: transform .4s ease;
         -webkit-transform: scaleX(0);
@@ -3327,7 +3310,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        background: #3d55ef;
+        background: #e12b5f;
         content: "";
         transition: transform .4s ease;
         -webkit-transform: scaleX(0);
@@ -3445,7 +3428,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        background: #3d55ef;
+        background: #e12b5f;
         content: "";
         transition: transform .4s ease;
         -webkit-transform: scaleX(0);
@@ -3608,10 +3591,7 @@
         display: inline-block;
         vertical-align: middle;
     }
-    .neomax-top-bar.header1 .header-inside {
-        margin-right: 0;
-      }
-
+ 
     .neomax-top-bar.header1 .menu-wrap {
         text-align: right;
     }
@@ -3783,19 +3763,6 @@
 
     .post-list .post:last-child {
         margin-bottom: 5px;
-    }
-    .side-pop-content a {
-        color: #000;
-        display: inline;
-        background-image: linear-gradient(transparent calc(100% - 1px),#000 1px);
-        background-repeat: no-repeat;
-        background-size: 0 100%;
-        transition: background-size .3s;
-    }
-
-    .side-pop-content a:hover {
-        color: #000;
-        background-size: 100% 100%;
     }
 
     .post-metawrap {
@@ -3971,17 +3938,7 @@
         color: #000;
     }
 
-    h3.feat-title {
-        color: #000;
-        display: inline;
-        background-image: linear-gradient(transparent calc(100% - 1px),#000 1px);
-        background-repeat: no-repeat;
-        background-size: 0 100%;
-        transition: background-size .3s;
-    }
-    h3.feat-title:hover {
-        background-size: 100% 100%;
-    }
+    
     .item-wrapped-right h3.feat-title:hover a {
         color: #000;
     }
@@ -4161,7 +4118,7 @@
         margin: 0 !important;
     }
     .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background-color: #c00 !important;
+    background-color: #e12b5f !important;
     border-radius: 0;
     }
     .mCSB_scrollTools .mCSB_draggerRail {
@@ -4184,11 +4141,11 @@
     top: 1px;
     }
     .os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
-    background-color: #c00;
+    background-color: #e12b5f;
     opacity: 0.5;
     }
     .os-scrollbar:hover>.os-scrollbar-track>.os-scrollbar-handle, .os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle.active {
-    background-color: #c00;
+    background-color: #e12b5f;
     opacity: 1;
     }
     .mCSB_scrollTools.mCSB_scrollTools_horizontal a+.mCSB_draggerContainer{margin:0;}
@@ -4222,6 +4179,7 @@
   display: block;
   object-fit: cover;
 }
+
 
 /* Optional title styling */
 .two-row-grid-section .feat-title a {
@@ -4260,7 +4218,7 @@
 
 .section-title::before {
   content: '▶';
-  color: #e50914;
+  color: #e12b5f;
   font-size: 1.5rem;
   transform: scale(0);
   animation: popIn 0.4s ease 0.3s forwards;
@@ -4334,7 +4292,7 @@ h2.poster-title {
 
 .poster-play-button {
     display: inline-block;
-    background-color: #e50914;
+    background-color: #e12b5f;
     padding: 12px 20px;
     color: #fff;
     font-weight: bold;
@@ -4650,42 +4608,6 @@ h2.poster-title {
     color: #333;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .video-grid-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .video-card-content {
-        padding: 12px;
-    }
-    
-    .video-title {
-        font-size: 15px;
-    }
-    
-    .video-meta-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .play-overlay {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .play-overlay i {
-        font-size: 20px;
-    }
-    
-    .video-grid-container {
-        gap: 16px;
-    }
-}
 
 /* Dark Theme Support */
 body.dark-theme .video-card {
@@ -4847,6 +4769,7 @@ h1.video-title {
 .share-icons button {
     display: inline-block;
     margin-right: 10px;
+    margin-bottom: 10px;
     color: #fff;
     text-decoration: none;
     background: #2c3e50;
@@ -4896,7 +4819,6 @@ h1.video-title {
 .video-meta .post-comments {
   display: flex;
   align-items: center;
-  gap: 5px;
 }
 
 .share-icons {
@@ -4963,6 +4885,8 @@ button.toggle {
     align-items: center;
     top: inherit;
     flex-shrink: 0;
+    background:#fff;
+    color:#000;
     flex-grow: 0;
     width: 30px;
     height: 30px;
@@ -5157,7 +5081,7 @@ body.darkmode--activated {
     color: #fff;
 }
 body.darkmode--activated .theme-author a {
-    color: #3d55ef;
+    color: #e12b5f;
 }
 .darkmode-toggle {
     right: 40px !important;
@@ -5180,9 +5104,47 @@ body.darkmode--activated .pagelink p {
 body.darkmode--activated .post-content a:hover, body.darkmode--activated .comment-text a:hover, .textwidget a:hover {
     color: #999;
 }
+body.darkmode--activated button.toggle {
+    background:#000;
+    color:#fff;
+}
+body.darkmode--activated textarea{
+    background:#222;
+}
 /* Darkmode css end*/
 
 
 .two-row-grid-section .postcomment a {
     color: #999;
+}
+
+h2.wp-block-heading {
+    margin-bottom: 20px;
+}
+.widget_block {
+    margin-bottom: 30px;
+}
+.poster-meta a {
+    color: #aaa;
+}
+.post-grid-item:hover .poster-play-icon {
+    border-color: #fff;
+}
+.hc-offcanvas-nav{
+    font-family: 'Poppins', sans-serif;
+}
+.poster-play-icon a {
+    padding: 15px 20px;
+}
+body.page .post-content {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body.page .title-wrap {
+     padding-bottom: 0; 
+}
+body.page .page-title {
+    padding-top: 30px;
+    margin-bottom: 20px;
 }

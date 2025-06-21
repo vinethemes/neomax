@@ -39,7 +39,7 @@
                             $video_thumb = function_exists('neomax_get_embed_thumbnail') ? neomax_get_embed_thumbnail(get_the_ID()) : '';
                             if (!empty($video_thumb)) {
                                 ?>
-                                <div class="image-slide" style="position: relative;">
+                                <div class="image-slide video-thumb" style="position: relative;">
                                     <a href="<?php the_permalink(); ?>">
                                         <img src="<?php echo esc_url($video_thumb); ?>" alt="<?php the_title_attribute(); ?>" width="300" height="200" />
                                     </a>
@@ -90,7 +90,9 @@
                                                 </a>
                                             </div>
                                             <div class="postcomment">
-                                                <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                                                <?php if (comments_open()) : ?>
+                                                    <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>

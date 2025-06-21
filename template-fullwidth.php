@@ -11,23 +11,29 @@ get_header(); ?>
 
 <div id="content-wrap" class="clearfix fullwidth-page">
     <div id="content" class="fullwidth" tabindex="-1">
-        
 
-            <?php while ( have_posts() ) : the_post(); ?>
-                <article <?php post_class('fullwidth-article'); ?>>
-                    <h1 class="page-title"><?php the_title(); ?></h1>
-                    <div class="page-content">
-                        <?php the_content(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+            <article <?php post_class('fullwidth-article'); ?>>
+
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <div class="featured-image">
+                        <?php the_post_thumbnail( 'neomax-large-image' ); ?>
                     </div>
-                </article>
+                <?php endif; ?>
 
-                <?php if ( comments_open() || get_comments_number() ) :
-                    comments_template();
-                endif; ?>
+                <h1 class="page-title"><?php the_title(); ?></h1>
 
-            <?php endwhile; ?>
+                <div class="page-content">
+                    <?php the_content(); ?>
+                </div>
+            </article>
 
- 
+            <?php if ( comments_open() || get_comments_number() ) :
+                comments_template();
+            endif; ?>
+
+        <?php endwhile; ?>
+
     </div>
 </div>
 

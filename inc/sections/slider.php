@@ -8,9 +8,9 @@
 ?>
 
     <!--  scroller -->
-<?php if ( get_theme_mod('neomax_customizer_mainslider_disable') != 'disable') {
+<?php if ( get_theme_mod('neomax_customizer_mainslider_disable') != 'disable') { ?>
 
-    if (get_theme_mod('neomax_slider_designs') == 'Slider1') { ?>
+   
 
         <div class="slider-wrapper23 main slider">
 
@@ -66,7 +66,7 @@ $video_thumb = neomax_get_embed_thumbnail(get_the_ID());
 
 if (!empty($video_thumb)) {
     ?>
-    <div class="image-slide" style="position: relative;">
+    <div class="image-slide video-thumb" style="position: relative;">
         <a href="<?php the_permalink(); ?>">
             <img src="<?php echo esc_url($video_thumb); ?>" alt="<?php the_title_attribute(); ?>" width="300" height="200" />
         </a>
@@ -107,7 +107,9 @@ if (!empty($video_thumb)) {
                         <div class="slider-meta">
                             <div class="scroll-post"><?php echo neomax_getCategory(); ?></div>
                             <div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo time_ago_custom(get_the_date('c')); ?></a></div>
-                            <div class="postcomment"><?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax'), '', ''); ?></div>
+                            <div class="postcomment"><?php if (comments_open()) : ?>
+                                                    <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                                                <?php endif; ?></div>
                         </div>
                     </div>
                 </div>
@@ -130,7 +132,5 @@ echo '</div>'; // close main-wrap
             
 
         </div>
-<?php }
-    
-?>
+
 <?php } ?>

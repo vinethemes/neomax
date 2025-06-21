@@ -87,13 +87,23 @@ class neomax_latest_news_widget extends WP_Widget {
                 <div class="side-pop <?php if($layout == 'small_thumb') : ?>list<?php endif; ?>">
 
                     <div class="side-pop-img">
-                        <?php if(has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('neomax-widget-small-thumb'); ?></a>
+                        <?php
+                        $video_thumb = neomax_get_embed_thumbnail(get_the_ID());
+                        if (!empty($video_thumb)) :
+                        ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                <img loading="lazy" src="<?php echo esc_url($video_thumb); ?>" alt="<?php the_title_attribute(); ?>" class="neomax-video-thumb" />
+                            </a>
+                        <?php elseif (has_post_thumbnail()) : ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                <?php the_post_thumbnail('neomax-widget-small-thumb'); ?>
+                            </a>
                         <?php else : ?>
-                            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                                 <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/images/slider-default.png'); ?>" alt="<?php esc_attr_e('Default', 'neomax'); ?>" />
                             </a>
                         <?php endif; ?>
+
                         <?php if($counter) : ?><span class="side-count"><?php echo esc_html($number_count); ?></span><?php endif; ?>
                     </div>
 

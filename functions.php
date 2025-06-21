@@ -123,9 +123,6 @@ function neomax_scripts() {
 	//matchheight
     wp_enqueue_script( 'neomax-jquery-matchheight', get_template_directory_uri() . '/includes/js/matchheight/matchheight.js', array( 'jquery' ), $version, true );
 
-    //micromodal
-    wp_enqueue_script( 'neomax-jquery-micromodal', get_template_directory_uri() . '/includes/js/micromodal/micromodal.js', array( 'jquery' ), $version, true );
-
     //outline.js
     wp_enqueue_script( 'neomax-jquery-outline', get_template_directory_uri() . '/includes/js/outline/outline.js', array( 'jquery' ), $version, true );
 
@@ -522,37 +519,67 @@ function has_video_embed($post_id = null) {
 }
 
 function get_first_video_embed($post_id = null) {
-    if (!$post_id) {
-        $post_id = get_the_ID();
-    }
-
+    $post_id = $post_id ?: get_the_ID();
     $content = get_post_field('post_content', $post_id);
     $blocks = parse_blocks($content);
 
+    // Normalize embed URLs to oEmbed compatible format
+    $normalize_youtube_url = function($url) {
+        if (strpos($url, 'youtube.com/embed/') !== false) {
+            preg_match('/embed\/([a-zA-Z0-9_-]+)/', $url, $matches);
+            if (!empty($matches[1])) {
+                return 'https://www.youtube.com/watch?v=' . $matches[1];
+            }
+        }
+        return $url;
+    };
+
+    // 1. Check for Gutenberg embed blocks
     foreach ($blocks as $block) {
         if (
-            $block['blockName'] === 'core/embed' ||
-            strpos($block['blockName'], 'core-embed/') === 0
+            isset($block['blockName']) &&
+            (
+                $block['blockName'] === 'core/embed' ||
+                strpos($block['blockName'], 'core-embed/') === 0
+            )
         ) {
             if (!empty($block['attrs']['url'])) {
-                // Force embed using wp_oembed_get
-                return '<div class="video-embed">' . wp_oembed_get($block['attrs']['url'], ['autoplay' => 1]) . '</div>';
+                $url = $normalize_youtube_url($block['attrs']['url']);
+                $embed_html = wp_oembed_get($url, ['autoplay' => 1]);
+                if ($embed_html) {
+                    return '<div class="video-embed">' . $embed_html . '</div>';
+                }
             }
         }
 
-        // Handle core/video blocks
-        if ($block['blockName'] === 'core/video' && !empty($block['innerHTML'])) {
+        // 2. Gutenberg core/video
+        if (
+            isset($block['blockName']) &&
+            $block['blockName'] === 'core/video' &&
+            !empty($block['innerHTML'])
+        ) {
             return '<div class="video-embed">' . $block['innerHTML'] . '</div>';
         }
     }
 
-    // Fallback: detect any YouTube/Vimeo link and autoembed
-    if (preg_match('/https?:\/\/(www\.)?(youtube\.com|youtu\.be|vimeo\.com)\/[^\s"]+/', $content, $match)) {
-        return '<div class="video-embed">' . wp_oembed_get($match[0], ['autoplay' => 1]) . '</div>';
+    // 3. Manual <iframe> fallback
+    if (preg_match('/<iframe[^>]+src=["\']([^"\']+)["\'][^>]*><\/iframe>/', $content, $matches)) {
+        return '<div class="video-embed">' . $matches[0] . '</div>';
+    }
+
+    // 4. Auto-detect YouTube/Vimeo/etc links and normalize YouTube embed
+    if (preg_match('/https?:\/\/(?:www\.)?(youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com|facebook\.com)\/[^\s"\']+/', $content, $match)) {
+        $url = $normalize_youtube_url($match[0]);
+        $embed_html = wp_oembed_get($url, ['autoplay' => 1]);
+        if ($embed_html) {
+            return '<div class="video-embed">' . $embed_html . '</div>';
+        }
     }
 
     return '';
 }
+
+
 
 add_filter('oembed_result', 'autoplay_video_embeds', 10, 3);
 function autoplay_video_embeds($html, $url, $args) {
@@ -590,17 +617,13 @@ function remove_first_video_block($content) {
 }
 
 
-function neomax_get_embed_thumbnail($post_id, $size = 'hqdefault') {
+function neomax_get_embed_thumbnail($post_id) {
     $content = get_post_field('post_content', $post_id);
 
-    // Match common YouTube video URLs
-    if (preg_match('/https?:\/\/(?:www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $content, $yt_match)) {
-        $video_id = $yt_match[2];
-
-        // Ensure valid size option
-        $size = ($size === 'maxresdefault') ? 'maxresdefault' : 'hqdefault';
-        
-        return "https://img.youtube.com/vi/{$video_id}/{$size}.jpg";
+    // Match YouTube URLs: watch, youtu.be, embed
+    if (preg_match('/https?:\/\/(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/', $content, $yt_match)) {
+        $video_id = $yt_match[1];
+        return "https://img.youtube.com/vi/{$video_id}/maxresdefault.jpg";
     }
 
     // Match Vimeo video URLs

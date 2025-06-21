@@ -1,14 +1,14 @@
-# Copyright (C) 2024 VineThemes
+# Copyright (C) 2025 VineThemes
 # This file is distributed under the GNU General Public License v2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Neomax 1.0.1\n"
+"Project-Id-Version: Neomax 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/neomax\n"
-"POT-Creation-Date: 2024-06-02 11:43:35+00:00\n"
+"POT-Creation-Date: 2025-06-20 19:37:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -20,18 +20,27 @@ msgstr ""
 msgid "Sorry, but the page you are looking for has moved or no longer exists. Please use the search below, or the menu to locate the missing page."
 msgstr ""
 
-#: archive.php:74 inc/slider/slider.php:65 inc/slider/slider.php:126
-#: index.php:98
+#: archive.php:74 inc/sections/footer-slider.php:94
+#: inc/sections/highlight-slider.php:94 inc/sections/large-poster.php:47
+#: inc/sections/large-poster.php:77 inc/sections/slider.php:111
+#: inc/sections/trending-grid.php:78 inc/sections/two-row-grid.php:78
+#: index.php:117 single.php:51 single.php:155
 msgid "0"
 msgstr ""
 
-#: archive.php:74 inc/slider/slider.php:65 inc/slider/slider.php:126
-#: index.php:98
+#: archive.php:74 inc/sections/footer-slider.php:94
+#: inc/sections/highlight-slider.php:94 inc/sections/large-poster.php:47
+#: inc/sections/large-poster.php:77 inc/sections/slider.php:111
+#: inc/sections/trending-grid.php:78 inc/sections/two-row-grid.php:78
+#: index.php:117 single.php:51 single.php:155
 msgid "1"
 msgstr ""
 
-#: archive.php:74 inc/slider/slider.php:65 inc/slider/slider.php:126
-#: index.php:98
+#: archive.php:74 inc/sections/footer-slider.php:94
+#: inc/sections/highlight-slider.php:94 inc/sections/large-poster.php:47
+#: inc/sections/large-poster.php:77 inc/sections/slider.php:111
+#: inc/sections/trending-grid.php:78 inc/sections/two-row-grid.php:78
+#: index.php:117 single.php:51 single.php:155
 msgid "%"
 msgstr ""
 
@@ -426,325 +435,363 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: customizer.php:24 inc/about/about-neomax.php:183
+#: customizer.php:27 inc/about/about-neomax.php:180
 msgid "Neomax Premium"
 msgstr ""
 
-#: customizer.php:37 customizer.php:181 customizer.php:224 customizer.php:334
-#: customizer.php:420 customizer.php:571 customizer.php:612 customizer.php:711
+#: customizer.php:43 customizer.php:192 customizer.php:274 customizer.php:345
+#: customizer.php:405 customizer.php:476 customizer.php:546 customizer.php:615
+#: customizer.php:768 customizer.php:810 customizer.php:913 customizer.php:938
 msgid "Upgrade"
 msgstr ""
 
-#: customizer.php:38
+#: customizer.php:44
 msgid "There are lots of reasons to upgrade to Pro version. Unlimited custom Colors, rich Typography options, multiple variation of Blog Feed layout and way much more. Also Premium Support included."
 msgstr ""
 
-#: customizer.php:39 inc/about/about-neomax.php:178
-#: inc/about/about-neomax.php:332
+#: customizer.php:45 inc/about/about-neomax.php:175
+#: inc/about/about-neomax.php:329
 msgid "Get Neomax Premium"
 msgstr ""
 
-#: customizer.php:42 customizer.php:44 inc/about/about-neomax.php:145
+#: customizer.php:48 customizer.php:50 inc/about/about-neomax.php:142
 msgid "Documentation"
 msgstr ""
 
-#: customizer.php:43
+#: customizer.php:49
 msgid "Read how to customize the theme, set up widgets, and learn all the possible options available to you."
 msgstr ""
 
-#: customizer.php:47 customizer.php:49 inc/about/about-neomax.php:29
+#: customizer.php:53 customizer.php:55 inc/about/about-neomax.php:29
 msgid "Support"
 msgstr ""
 
-#: customizer.php:48
+#: customizer.php:54
 msgid "For Neomax theme related questions feel free to post on our support forums."
 msgstr ""
 
-#: customizer.php:64 inc/about/about-neomax.php:5
+#: customizer.php:70 inc/about/about-neomax.php:5
 msgid "About Neomax"
 msgstr ""
 
-#: customizer.php:91
+#: customizer.php:97
 msgid "Light Logo"
 msgstr ""
 
-#: customizer.php:103
+#: customizer.php:109
 msgid "Dark Logo"
 msgstr ""
 
-#: customizer.php:114 customizer.php:129
-msgid "Top Information Bar"
+#: customizer.php:127
+msgid "Main Featured Slider"
 msgstr ""
 
-#: customizer.php:115
-msgid "To change Background Colors Upgrade to Premium version"
+#: customizer.php:128
+msgid "Configure your Main Featured Slider here."
 msgstr ""
 
-#: customizer.php:133 customizer.php:254 customizer.php:361
+#: customizer.php:140
+msgid "Homepage Main Featured Slider"
+msgstr ""
+
+#: customizer.php:144 customizer.php:300 customizer.php:371 customizer.php:432
+#: customizer.php:502 customizer.php:571
 msgid "Enable"
 msgstr ""
 
-#: customizer.php:134 customizer.php:255 customizer.php:362
+#: customizer.php:145 customizer.php:301 customizer.php:372 customizer.php:433
+#: customizer.php:503 customizer.php:572
 msgid "Disable"
 msgstr ""
 
-#: customizer.php:148
-msgid "Information Bar Text"
+#: customizer.php:156
+msgid "Category for Main Featured Slider"
 msgstr ""
 
-#: customizer.php:165
-msgid "Information Bar Link URL"
+#: customizer.php:172
+msgid "Number of Posts for Main Featured Slider"
 msgstr ""
 
-#: customizer.php:195
-msgid "Header Designs"
+#: customizer.php:193
+msgid "Upgrade to Neomax Premium for more options - "
 msgstr ""
 
-#: customizer.php:196
-msgid "Select Header Designs from here."
+#: customizer.php:203
+msgid "Social Links"
 msgstr ""
 
-#: customizer.php:207
-msgid "Header Design Layout"
-msgstr ""
-
-#: customizer.php:210
-msgid "Header 1"
-msgstr ""
-
-#: customizer.php:211
-msgid "Header 2"
-msgstr ""
-
-#: customizer.php:237
-msgid "Main Slider Options"
-msgstr ""
-
-#: customizer.php:238
-msgid "Configure your Main Slider here."
+#: customizer.php:241
+msgid "%s URL"
 msgstr ""
 
 #: customizer.php:250
-msgid "Homepage Main Slider"
+msgid "Submit Video Button"
 msgstr ""
 
-#: customizer.php:266
-msgid "Category for Main Slider"
+#: customizer.php:260
+msgid "Submit Video URL"
 msgstr ""
 
-#: customizer.php:282
-msgid "Number of Posts for Main Slider"
+#: customizer.php:275 customizer.php:346 customizer.php:406 customizer.php:477
+#: customizer.php:547 customizer.php:616
+msgid "Upgrade to Neomax Premium - "
 msgstr ""
 
-#: customizer.php:299
-msgid "Slider Designs"
+#: customizer.php:286
+msgid "Below Slider - Grid 2-Row"
 msgstr ""
 
-#: customizer.php:302
-msgid "Modern Slider"
+#: customizer.php:296 customizer.php:367 customizer.php:428 customizer.php:498
+msgid "Enable Section"
 msgstr ""
 
-#: customizer.php:303
-msgid "Grid View (Only in Premium Version)"
+#: customizer.php:306 inc/sections/two-row-grid.php:13
+msgid "New Releases"
 msgstr ""
 
-#: customizer.php:304
-msgid "Carousel (Only in Premium Version)"
+#: customizer.php:311
+msgid "Section Title"
 msgstr ""
 
-#: customizer.php:316
-msgid "Category for After Slider Posts"
+#: customizer.php:320 customizer.php:381 customizer.php:452 customizer.php:522
+#: customizer.php:591
+msgid "Select Category"
 msgstr ""
 
-#: customizer.php:344
-msgid "Small Slider Options"
-msgstr ""
-
-#: customizer.php:345
-msgid "Configure your Small Slider here."
+#: customizer.php:331 customizer.php:392 customizer.php:463 customizer.php:533
+#: customizer.php:602
+msgid "Number of Posts"
 msgstr ""
 
 #: customizer.php:357
-msgid "Small Slider (Only in Premium Version)"
+msgid "Large Poster Section"
 msgstr ""
 
-#: customizer.php:373
-msgid "Category for Small Slider"
+#: customizer.php:418
+msgid "Highlight Slider"
 msgstr ""
 
-#: customizer.php:389
-msgid "Category for Slider"
+#: customizer.php:437
+msgid "Action Sequences"
 msgstr ""
 
-#: customizer.php:404
-msgid "Number of Posts for Small Slider"
+#: customizer.php:442
+msgid "Highlight Slider Section Title"
 msgstr ""
 
-#: customizer.php:432
-msgid "General Options"
+#: customizer.php:488
+msgid "Trending Grid"
 msgstr ""
 
-#: customizer.php:433
-msgid "(Load More Posts feature is only available in Premium Version. Upgrade to Premium version.)"
+#: customizer.php:507
+msgid "Trending Now"
 msgstr ""
 
-#: customizer.php:445
-msgid "Latest Posts Title"
+#: customizer.php:512
+msgid "Trending Grid Section Title"
 msgstr ""
 
-#: customizer.php:464
-msgid "Hide Top Search Icon"
+#: customizer.php:557
+msgid "Footer Related Posts Slider"
 msgstr ""
 
-#: customizer.php:477
-msgid "Disable Responsive"
+#: customizer.php:567
+msgid "Enable Slider"
 msgstr ""
 
-#: customizer.php:490
-msgid "Disable Round Borders (Only in Premium Version)"
-msgstr ""
-
-#: customizer.php:503
-msgid "Load More Posts (Only in Premium Version)"
-msgstr ""
-
-#: customizer.php:516
-msgid "Disable Sidebar on Homepage and Archive Pages"
-msgstr ""
-
-#: customizer.php:529
-msgid "Disable Sidebar on Posts"
-msgstr ""
-
-#: customizer.php:542
-msgid "Disable Sidebar on Pages"
-msgstr ""
-
-#: customizer.php:556
-msgid "Disable Author Box on Posts"
+#: customizer.php:576
+msgid "You May Also Like"
 msgstr ""
 
 #: customizer.php:581
+msgid "Footer Related Slider Title"
+msgstr ""
+
+#: customizer.php:629
+msgid "General Options"
+msgstr ""
+
+#: customizer.php:630
+msgid "(Load More Posts feature is only available in Premium Version. Upgrade to Premium version.)"
+msgstr ""
+
+#: customizer.php:642
+msgid "Latest Posts Title"
+msgstr ""
+
+#: customizer.php:661
+msgid "Hide Top Search Icon"
+msgstr ""
+
+#: customizer.php:674
+msgid "Disable Responsive"
+msgstr ""
+
+#: customizer.php:687
+msgid "Disable Round Borders (Only in Premium Version)"
+msgstr ""
+
+#: customizer.php:700
+msgid "Load More Posts (Only in Premium Version)"
+msgstr ""
+
+#: customizer.php:713
+msgid "Disable Sidebar on Homepage and Archive Pages"
+msgstr ""
+
+#: customizer.php:726
+msgid "Disable Sidebar on Posts"
+msgstr ""
+
+#: customizer.php:739
+msgid "Disable Sidebar on Pages"
+msgstr ""
+
+#: customizer.php:753
+msgid "Disable Author Box on Posts"
+msgstr ""
+
+#: customizer.php:769
+msgid "Upgrade to Neomax Premium for Load More Posts feature - "
+msgstr ""
+
+#: customizer.php:779
 msgid "Footer Settings"
 msgstr ""
 
-#: customizer.php:582
+#: customizer.php:780
 msgid "Configure Your Footer Here. You can't change our footer links in the free version of this theme."
 msgstr ""
 
-#: customizer.php:595
+#: customizer.php:793
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: customizer.php:647
+#: customizer.php:811
+msgid "Upgrade to Neomax Premium for changing Footer Links - "
+msgstr ""
+
+#: customizer.php:846
 msgid "Color1 (Only in Premium Version)"
 msgstr ""
 
-#: customizer.php:668
+#: customizer.php:867
 msgid "Color2 (Only in Premium Version)"
 msgstr ""
 
-#: customizer.php:692
+#: customizer.php:891
 msgid "Main Color"
 msgstr ""
 
-#: footer.php:50
-msgid "Copyright &copy; 2024. All Rights Reserved."
+#: customizer.php:914
+msgid "Upgrade to Neomax Premium for more Color options - "
 msgstr ""
 
-#: footer.php:55
+#: customizer.php:925
+msgid "Typography Settings"
+msgstr ""
+
+#: customizer.php:939
+msgid "Upgrade to Neomax Premium for Typography options - "
+msgstr ""
+
+#: footer.php:58
+msgid "Copyright &copy; 2025. All Rights Reserved."
+msgstr ""
+
+#: footer.php:68
 msgid "Designed by"
 msgstr ""
 
-#: footer.php:56
+#: footer.php:71
 msgid "VineThemes"
 msgstr ""
 
-#: full-width.php:50 page.php:49 single.php:91 single.php:93
+#: full-width.php:50 page.php:49
 msgid "Read More"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:71
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:176
 msgid "Below Slider"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:178
 msgid "This widget area is for Newsletter, Ads, Most popular widgets, etc."
 msgstr ""
 
-#: functions.php:195
+#: functions.php:185
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:187
 msgid "Widgets in this area will be shown on the sidebar of all pages."
 msgstr ""
 
-#: functions.php:202
+#: functions.php:192
 msgid "Footer Top"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:198
 msgid "Use the \"Footer Top\" widget here."
 msgstr ""
 
-#: functions.php:211
+#: functions.php:201
 msgid "Instagram Footer"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:207
 msgid "Use the \"Instagram\" widget here. IMPORTANT: For best result set number of photos to 8."
 msgstr ""
 
-#: functions.php:221
+#: functions.php:211
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:223 functions.php:230 functions.php:237
+#: functions.php:213 functions.php:220 functions.php:227
 msgid "This widget area is for Footer Widgets."
 msgstr ""
 
-#: functions.php:228
+#: functions.php:218
 msgid "Footer Center"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:225
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:238
 msgid "Thank you for choosing Neomax! Now, we highly recommend you to visit our welcome page."
 msgstr ""
 
-#: functions.php:249
+#: functions.php:239
 msgid "Get Started with Neomax"
 msgstr ""
 
 #. translators: %s: comment author link
 
-#: functions.php:281
+#: functions.php:271
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr ""
 
 #. translators: %s: comment date
 
-#: functions.php:282
+#: functions.php:272
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:294
+#: functions.php:284
 msgid "Edit"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:292
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:411
+#: functions.php:401
 msgid "Posted By"
 msgstr ""
 
@@ -752,21 +799,15 @@ msgstr ""
 msgid "Skip to main content"
 msgstr ""
 
-#: header.php:42 header.php:50
-msgid "Subscribe to our Newsletter"
-msgstr ""
-
-#: header.php:91 header.php:135 header.php:247 header.php:291 header.php:404
-#: header.php:448
+#: header.php:70 header.php:114
 msgid "Light Header image"
 msgstr ""
 
-#: header.php:94 header.php:138 header.php:250 header.php:294 header.php:407
-#: header.php:451
+#: header.php:73 header.php:117
 msgid "Dark Header image"
 msgstr ""
 
-#: header.php:168 header.php:324 header.php:481
+#: header.php:147
 msgid "Header image"
 msgstr ""
 
@@ -775,7 +816,7 @@ msgid "Welcome to Neomax!"
 msgstr ""
 
 #: inc/about/about-neomax.php:15
-msgid "Neomax is free Movie and Video Wordpress Theme. It's perfect for any kind of blog: personal, multi-author, blog-news, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Coded with latest WordPress' standards."
+msgid "Neomax is free Movie & Video Wordpress Theme. It's perfect for any kind of blog: movie, video, news, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Coded with latest WordPress' standards."
 msgstr ""
 
 #: inc/about/about-neomax.php:23
@@ -852,195 +893,206 @@ msgid "Recommended Plugins are fully supported by Neomax theme. They well build 
 msgstr ""
 
 #: inc/about/about-neomax.php:109
-msgid "Theme advanced customizer options."
-msgstr ""
-
-#: inc/about/about-neomax.php:112
 msgid "Mailchimp"
 msgstr ""
 
-#: inc/about/about-neomax.php:112
+#: inc/about/about-neomax.php:109
 msgid "Mail newsletters. Simple but flexible."
 msgstr ""
 
-#: inc/about/about-neomax.php:115
+#: inc/about/about-neomax.php:112
 msgid "WP Instagram Widget"
 msgstr ""
 
-#: inc/about/about-neomax.php:115
+#: inc/about/about-neomax.php:112
 msgid "A WordPress widget for showing your latest Instagram photos."
 msgstr ""
 
-#: inc/about/about-neomax.php:133
+#: inc/about/about-neomax.php:130
 msgid "Forums"
 msgstr ""
 
-#: inc/about/about-neomax.php:136
+#: inc/about/about-neomax.php:133
 msgid "Before asking a questions it's highly recommended to search on forums, but if you can't find the solution feel free to create a new topic."
 msgstr ""
 
-#: inc/about/about-neomax.php:138
+#: inc/about/about-neomax.php:135
 msgid "Go to Support Forums"
 msgstr ""
 
-#: inc/about/about-neomax.php:148
+#: inc/about/about-neomax.php:145
 msgid "Need more details? Please check out neomax Theme Documentation for detailed information."
 msgstr ""
 
-#: inc/about/about-neomax.php:150
+#: inc/about/about-neomax.php:147
 msgid "Read Full Documentation"
 msgstr ""
 
-#: inc/about/about-neomax.php:158
+#: inc/about/about-neomax.php:155
 msgid "Donation"
 msgstr ""
 
-#: inc/about/about-neomax.php:161
+#: inc/about/about-neomax.php:158
 msgid "Even a small sum can help us a lot with theme development. If the neomax theme is useful and our support is helpful, please don't hesitate to donate a little bit, at least buy us a Coffee or a Beer :)"
 msgstr ""
 
-#: inc/about/about-neomax.php:163
+#: inc/about/about-neomax.php:160
 msgid "Donate with PayPal"
 msgstr ""
 
-#: inc/about/about-neomax.php:182
+#: inc/about/about-neomax.php:179
 msgid "Neomax"
 msgstr ""
 
-#: inc/about/about-neomax.php:189
+#: inc/about/about-neomax.php:186
 msgid "100% Responsive and Retina Ready"
 msgstr ""
 
-#: inc/about/about-neomax.php:190
+#: inc/about/about-neomax.php:187
 msgid "Theme adapts to any kind of device screen, from mobile phones to high resolution Retina displays."
 msgstr ""
 
-#: inc/about/about-neomax.php:197
+#: inc/about/about-neomax.php:194
 msgid "Translation Ready"
 msgstr ""
 
-#: inc/about/about-neomax.php:198
+#: inc/about/about-neomax.php:195
 msgid "Each hard-coded string is ready for translation, means you can translate everything. Language \"neomax.pot\" file included."
 msgstr ""
 
-#: inc/about/about-neomax.php:205
+#: inc/about/about-neomax.php:202
 msgid "MailChimp Support"
 msgstr ""
 
-#: inc/about/about-neomax.php:206
+#: inc/about/about-neomax.php:203
 msgid "The most popular email client plugin. Very simple but super flexible."
 msgstr ""
 
-#: inc/about/about-neomax.php:213
+#: inc/about/about-neomax.php:210
 msgid "Image &amp; Text Logos"
 msgstr ""
 
-#: inc/about/about-neomax.php:214
+#: inc/about/about-neomax.php:211
 msgid "Upload your logo image(set the size) or simply type your text logo."
 msgstr ""
 
-#: inc/about/about-neomax.php:221
+#: inc/about/about-neomax.php:218
 msgid "Featured Posts Slider"
 msgstr ""
 
-#: inc/about/about-neomax.php:223
+#: inc/about/about-neomax.php:220
 msgid "Showcase unlimited number of Blog Posts in header area. There are three Slider designs."
 msgstr ""
 
-#: inc/about/about-neomax.php:231
+#: inc/about/about-neomax.php:228
 msgid "Background Image/Color"
 msgstr ""
 
-#: inc/about/about-neomax.php:232
+#: inc/about/about-neomax.php:229
 msgid "Set the custom body Background image or Color."
 msgstr ""
 
-#: inc/about/about-neomax.php:240
+#: inc/about/about-neomax.php:237
 msgid "Header Background Image/Color"
 msgstr ""
 
-#: inc/about/about-neomax.php:242
+#: inc/about/about-neomax.php:239
 msgid "Set the custom header Background image or Color."
 msgstr ""
 
-#: inc/about/about-neomax.php:250
+#: inc/about/about-neomax.php:247
 msgid "Instagram Widget Area"
 msgstr ""
 
-#: inc/about/about-neomax.php:252
+#: inc/about/about-neomax.php:249
 msgid "Set your Instagram Images in the footer."
 msgstr ""
 
-#: inc/about/about-neomax.php:261
+#: inc/about/about-neomax.php:258
 msgid "Post Layouts"
 msgstr ""
 
-#: inc/about/about-neomax.php:262
+#: inc/about/about-neomax.php:259
 msgid "Standard, List and Grid Blog Feed layout."
 msgstr ""
 
-#: inc/about/about-neomax.php:269
+#: inc/about/about-neomax.php:266
 msgid "Multi-level Sub Menu Support"
 msgstr ""
 
-#: inc/about/about-neomax.php:270
+#: inc/about/about-neomax.php:267
 msgid "Unlimited level of sub menus. Add as much as you need."
 msgstr ""
 
-#: inc/about/about-neomax.php:277
+#: inc/about/about-neomax.php:274
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/about/about-neomax.php:279
+#: inc/about/about-neomax.php:276
 msgid "Right Widgetised area."
 msgstr ""
 
-#: inc/about/about-neomax.php:288
+#: inc/about/about-neomax.php:285
 msgid "Unlimited Colors"
 msgstr ""
 
-#: inc/about/about-neomax.php:289
+#: inc/about/about-neomax.php:286
 msgid "Tons of color options. You can customize your Header, Content and Footer separately as much as possible."
 msgstr ""
 
-#: inc/about/about-neomax.php:296
+#: inc/about/about-neomax.php:293
 msgid "800+ Google Fonts"
 msgstr ""
 
-#: inc/about/about-neomax.php:297
+#: inc/about/about-neomax.php:294
 msgid "Rich Typography options. Choose from more than 800 Google Fonts, adjust Size, Line Height, Font Weight, etc..."
 msgstr ""
 
-#: inc/about/about-neomax.php:304
+#: inc/about/about-neomax.php:301
 msgid "Grid Layout"
 msgstr ""
 
-#: inc/about/about-neomax.php:305 inc/about/about-neomax.php:313
+#: inc/about/about-neomax.php:302 inc/about/about-neomax.php:310
 msgid "Choose from 1 up to 4 columns grid layout for your Blog Feed."
 msgstr ""
 
-#: inc/about/about-neomax.php:312
+#: inc/about/about-neomax.php:309
 msgid "List Layout"
 msgstr ""
 
-#: inc/about/about-neomax.php:320
+#: inc/about/about-neomax.php:317
 msgid "Advanced Footer Options"
 msgstr ""
 
-#: inc/about/about-neomax.php:321
+#: inc/about/about-neomax.php:318
 msgid "Theme and Author credit links in the footer are automatically removed."
 msgstr ""
 
-#: inc/about/about-neomax.php:372
+#: inc/about/about-neomax.php:369
 msgid "Installed"
 msgstr ""
 
-#: inc/about/about-neomax.php:375
+#: inc/about/about-neomax.php:372
 msgid "Install Now"
 msgstr ""
 
-#: inc/slider/slider.php:48 inc/slider/slider.php:109 index.php:83
+#: inc/sections/footer-slider.php:15
+msgid "You may also like"
+msgstr ""
+
+#: inc/sections/footer-slider.php:68 inc/sections/highlight-slider.php:68
+#: inc/sections/large-poster.php:87 inc/sections/slider.php:92
+#: inc/sections/trending-grid.php:56 inc/sections/two-row-grid.php:56
+#: index.php:70
 msgid "No Image"
+msgstr ""
+
+#: inc/sections/highlight-slider.php:15
+msgid "Highlights"
+msgstr ""
+
+#: inc/sections/trending-grid.php:13
+msgid "Trending Movies"
 msgstr ""
 
 #: inc/widgets/about_widget.php:20
@@ -1079,108 +1131,80 @@ msgstr ""
 msgid "Neomax: Post Widget"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:94
+#: inc/widgets/category_post_widget.php:103
 msgid "Default"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:139
+#: inc/widgets/category_post_widget.php:149
 msgid "Latest Posts"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:144
+#: inc/widgets/category_post_widget.php:154
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:150
+#: inc/widgets/category_post_widget.php:160
 msgid "Choose Layout"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:152
+#: inc/widgets/category_post_widget.php:162
 msgid "Small Thumbnail"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:153
+#: inc/widgets/category_post_widget.php:163
 msgid "Text Only List"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:159
+#: inc/widgets/category_post_widget.php:169
 msgid "Filter by Category"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:161
+#: inc/widgets/category_post_widget.php:171
 msgid "All categories"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:171
+#: inc/widgets/category_post_widget.php:181
 msgid "Post IDs (separate with comma):"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:173
+#: inc/widgets/category_post_widget.php:183
 msgid "Display specific posts using post IDs. This option will override the category option above."
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:178
+#: inc/widgets/category_post_widget.php:188
 msgid "Number of posts to show:"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:184
+#: inc/widgets/category_post_widget.php:194
 msgid "Add Numbering"
 msgstr ""
 
-#: inc/widgets/category_post_widget.php:190
+#: inc/widgets/category_post_widget.php:200
 msgid "Hide Date"
 msgstr ""
 
-#: searchform.php:11 searchform.php:12 searchform.php:13
-msgid "Search"
+#: index.php:133
+msgid "No videos found."
 msgstr ""
 
-#: single.php:81
-msgid "0 Comment"
-msgstr ""
-
-#: single.php:81
-msgid "1 Comment"
-msgstr ""
-
-#: single.php:81
-msgid "% Comments"
+#: index.php:134
+msgid "Check back later for new content."
 msgstr ""
 
 #: neomax_custom_controller.php:15
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: template-nav.php:17
+#: searchform.php:11 searchform.php:12 searchform.php:13
+msgid "Search"
+msgstr ""
+
+#: template-nav.php:16
 msgid "Previous Post"
 msgstr ""
 
-#: template-nav.php:35
+#: template-nav.php:40
 msgid "Next Post"
-msgstr ""
-
-#: template-nav.php:57
-msgid "Posts navigation"
-msgstr ""
-
-#: theme-options.php:38
-msgid "Typography"
-msgstr ""
-
-#: theme-options.php:39
-msgid "This panel will provide all the webfonts for your website."
-msgstr ""
-
-#: theme-options.php:48
-msgid "Website Fonts, Colors, Style"
-msgstr ""
-
-#: theme-options.php:49
-msgid "You can change Website webfonts, colors, typography from here."
-msgstr ""
-
-#: theme-options.php:60
-msgid "This is only available in Premium Version. <br/><a target=\"_blank\" href=\"https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/\"> + Upgrade to Premium Version</a>"
 msgstr ""
 #. Theme Name of the plugin/theme
 msgid "Neomax"
@@ -1191,7 +1215,7 @@ msgid "https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Neomax is a Movie and Video WordPress theme designed to elevate your website's performance and user experience. This lightweight, mobile-first theme ensures rapid load times with features like lazy loading and asynchronous script loading. Built with clean code and integrated schema markup, Neomax enhances SEO performance, making it a perfect choice for bloggers and content creators. The theme is fully customizable, offering an intuitive customizer, pre-built layouts, and a drag-and-drop builder for effortless design. Advanced blog features include multiple post formats, related posts, and infinite scroll to keep readers engaged. With built-in social media integration, robust comment systems, and email subscription forms, Neomax enhances user interaction and engagement. Regular updates and secure coding practices ensure your site remains safe and up-to-date. Backed by comprehensive documentation and dedicated support, Neomax combines speed, functionality, and aesthetic appeal to deliver an exceptional blogging experience. Theme Demo here https://demo.vinethemes.com/livedemo/neomax.html."
+msgid "Neomax is a lightweight, movie video WordPress theme perfect for video creators, movie bloggers, and content publishers. Designed with performance and SEO in mind, Neomax features clean, accessible code, integrated schema markup, and fast page loads. The theme supports multiple post formats including video, gallery, and standard posts, along with infinite scroll and related posts to enhance user engagement. With full support for the WordPress Customizer, Neomax lets you easily personalize layouts, colors, and typography. It’s translation-ready, responsive, and built to work seamlessly with Gutenberg and popular plugins. Whether you’re building a film review site, a video showcase, or a personal blog, Neomax provides a clean, modern design and all the tools you need to grow your audience. Theme Demo here https://demo.vinethemes.com/neomax/."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1204,4 +1228,12 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full Width"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Neomax Fullwidth Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Neomax Homepage"
 msgstr ""

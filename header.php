@@ -32,41 +32,18 @@
     else { do_action( 'wp_body_open' ); }
     ?>
     <a class="skip-link" href="#content"><?php _e( 'Skip to main content', 'neomax' ); ?></a>
-    <?php if(get_theme_mod('neomax_information_bar_disable','disable')!= 'disable'){ ?>
-
-        <div class="information-bar">
-            <div class="container">
-                <?php if(get_theme_mod('neomax_information_link')){ ?>
-                    <a href="<?php echo esc_url( get_theme_mod( 'neomax_information_link' ) ); ?>"><?php
-                        if (!get_theme_mod('neomax_information_text')){
-                            _e( 'Subscribe to our Newsletter', 'neomax' );
-                        }
-                        else{
-                            echo wp_kses_post(get_theme_mod('neomax_information_text'));
-                        } ?></a>
-                <?php }
-                else {
-                    if (!get_theme_mod('neomax_information_text')){
-                        _e( 'Subscribe to our Newsletter', 'neomax' );
-                    }
-                    else{
-                        echo wp_kses_post(get_theme_mod('neomax_information_text'));
-                    }
-
-                } ?>
-                <div class="close"><i class="fa fa-times"></i></div>
-            </div>
-        </div>
-    <?php } ?>
+    
 
 
         <div class="neomax-top-bar header1">
             <div class="header1wrap">
         <!-- Update your toggle button to remove href -->
+         
+            <?php if ( has_nav_menu( 'main' ) ) { ?>
         <button class="toggle" type="button">
             <i class="fa fa-bars"></i>
             <span class="screen-reader-text">Menu</span>
-        </button>
+        </button><?php } ?>
 
             <div class="header-inside clearfix">
 

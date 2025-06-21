@@ -14,17 +14,23 @@
 
 
 
-// Pro Version
+        // Pro Version
         class Neomax_Customize_Pro_Version extends WP_Customize_Control {
-            public $type = 'pro_options';
+    public $type = 'pro_options';
+    public $message = ''; // New property
 
-            public function render_content() {
-                echo '<span>Upgrade to <strong></strong></span>';
-                echo '<a href="'. esc_url($this->description) .'" target="_blank">';
-                echo '<strong> '. esc_html__( 'Neomax Premium', 'neomax' ) .'<strong></a>';
-                echo '</a>';
-            }
+    public function render_content() {
+        if ( ! empty( $this->message ) && ! empty( $this->description ) ) {
+            echo '<p class="neomax-pro-upgrade-message">';
+            echo esc_html( $this->message ) . ' ';
+            echo '<a href="' . esc_url( $this->description ) . '" target="_blank">';
+            echo '<strong>' . esc_html__( 'Neomax Premium', 'neomax' ) . '</strong>';
+            echo '</a>';
+            echo '</p>';
         }
+    }
+}
+
 
         // Pro Version Links
         class Neomax_Customize_Pro_Version_Links extends WP_Customize_Control {
@@ -108,104 +114,11 @@
         );
 
 
-
-        //Top Information Bar
-        $wp_customize->add_section( 'neomax_information_bar', array(
-            'title'       => esc_html__( 'Top Information Bar', 'neomax' ),
-            'description' => esc_html__( 'To change Background Colors Upgrade to Premium version', 'neomax' ),
-            'priority'    => 2
-        ) );
-
-
-        $wp_customize->add_setting( 'neomax_information_bar_disable', array(
-            'default'    => 'disable',
-            'section'  => 'neomax_information_bar',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback'	=> 'neomax_sanitize_radio',
-        ) );
-
-        $wp_customize->add_control( 'neomax_information_bar_select_box', array(
-            'settings' => 'neomax_information_bar_disable',
-            'label'    => esc_html__( 'Top Information Bar', 'neomax' ),
-            'section'  => 'neomax_information_bar',
-            'type'     => 'select',
-            'choices'  => array(
-                'enable'  => esc_html__( 'Enable', 'neomax' ),
-                'disable' => esc_html__( 'Disable', 'neomax' ),
-            ),
-            'priority' => 1
-        ) );
-
-        $wp_customize->add_setting(
-            'neomax_information_text',
-            array(
-                'default'     => '',
-                'sanitize_callback' => 'sanitize_text_field'
-            )
-        );
-
-        $wp_customize->add_control('neomax_information_text', array(
-                'label'      => esc_html__('Information Bar Text','neomax'),
-                'section'    => 'neomax_information_bar',
-                'settings'   => 'neomax_information_text',
-                'type'		 => 'text',
-                'priority'	 => 2
-            )
-        );
-
-
-        $wp_customize->add_setting(
-            'neomax_information_link',
-            array(
-                'sanitize_callback' => 'esc_url_raw'
-            )
-        );
-
-        $wp_customize->add_control('neomax_information_link', array(
-                'label'      => esc_html__('Information Bar Link URL','neomax'),
-                'section'    => 'neomax_information_bar',
-                'settings'   => 'neomax_information_link',
-                'type'		 => 'url',
-                'priority'	 => 3
-            )
-        );
-
-        // Pro Version
-        $wp_customize->add_setting( 'pro_version_colors8', array(
-            'sanitize_callback' => 'neomax_sanitize_custom_control'
-        ) );
-        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
-                'pro_version_colors8', array(
-                    'section'	  => 'neomax_information_bar',
-                    'type'		  => 'pro_options',
-                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
-                    'priority'	  => 100
-                )
-            )
-        );
+      
 
 
 
-        //Top Information Bar
-
-
-        // Pro Version
-        $wp_customize->add_setting( 'pro_version_colors7', array(
-            'sanitize_callback' => 'neomax_sanitize_custom_control'
-        ) );
-        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
-                'pro_version_colors7', array(
-                    'section'	  => 'neomax_header_designs',
-                    'type'		  => 'pro_options',
-                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
-                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
-                    'priority'	  => 100
-                )
-            )
-        );
-
-        //Header Design
+        
 
 
 
@@ -277,6 +190,7 @@
                     'section'	  => 'neomax_customizer_mainslider',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium for more options - ', 'neomax' ),
                     'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
@@ -284,54 +198,51 @@
         );
 
 
+// Social Media Links
+$wp_customize->add_section('neomax_social_section', array(
+    'title'    => esc_html__('Social Links', 'neomax'),
+    'priority' => 5,
+));
 
-    // Social Media Links
-    $wp_customize->add_section('neomax_social_section', array(
-        'title'    => esc_html__('Social Links', 'neomax'),
-        'priority' => 5,
+$social_platforms = array(
+    'facebook'  => 'Facebook',
+    'twitter'   => 'Twitter (X)',
+    'instagram' => 'Instagram',
+    'youtube'   => 'YouTube',
+    'telegram'  => 'Telegram',
+    'tiktok'    => 'Tiktok',
+    'linkedin'  => 'Linkedin',
+    'pinterest' => 'Pinterest',
+    'snapchat'  => 'Snapchat',
+    'whatsapp'  => 'Whatsapp',
+    'reddit'    => 'Reddit',
+    'tumblr'    => 'Tumblr',
+    'discord'   => 'Discord',
+    'spotify'   => 'Spotify',
+    'dribbble'  => 'Dribbble',
+    'behance'   => 'Behance',
+    'github'    => 'Github',
+    'medium'    => 'Medium',
+    'slack'     => 'Slack',
+    'vk'        => 'Vk',
+    'flickr'    => 'Flickr',
+    'vimeo'     => 'Vimeo',
+    'wechat'    => 'WeChat',
+    'line'      => 'LINE',
+);
+
+foreach ($social_platforms as $slug => $label) {
+    $wp_customize->add_setting("neomax_social_{$slug}", array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
     ));
 
-    $social_platforms = array(
-        'facebook'  => 'Facebook',
-        'twitter'   => 'Twitter (X)',
-        'instagram' => 'Instagram',
-        'youtube'   => 'YouTube',
-        'telegram'  => 'Telegram',
-        'tiktok'  => 'Tiktok',
-        'linkedin'  => 'Linkedin',
-        'pinterest'  => 'Pinterest',
-        'snapchat'  => 'Snapchat',
-        'whatsapp'  => 'Whatsapp',
-        'reddit'  => 'Reddit',
-        'tumblr'  => 'Tumblr',
-        'discord'  => 'Discord',
-        'spotify'  => 'Spotify',
-        'dribbble'  => 'Dribbble',
-        'behance'  => 'Behance',
-        'github'  => 'Github',
-        'medium'  => 'Medium',
-        'slack'  => 'Slack',
-        'vk'  => 'Vk',
-        'flickr'  => 'Flickr',
-        'vimeo'  => 'Vimeo',
-        'wechat'  => 'WeChat',
-        'line'  => 'LINE',
-    );
-
-    foreach ($social_platforms as $slug => $label) {
-        $wp_customize->add_setting("neomax_social_{$slug}", array(
-            'default'           => '',
-            'sanitize_callback' => 'esc_url_raw',
-        ));
-
-        $wp_customize->add_control("neomax_social_{$slug}", array(
-            'label'   => esc_html__("$label URL", 'neomax'),
-            'section' => 'neomax_social_section',
-            'type'    => 'url',
-        ));
-    }    
-
-
+    $wp_customize->add_control("neomax_social_{$slug}", array(
+        'label'   => sprintf( esc_html__( '%s URL', 'neomax' ), $label ),
+        'section' => 'neomax_social_section',
+        'type'    => 'url',
+    ));
+}
 
 
         // Submit Video Button
@@ -351,6 +262,23 @@
         'settings' => 'neomax_submit_video_url',
         'type' => 'url',
     ));
+
+    // Pro Version
+        $wp_customize->add_setting( 'pro_version_submit_video', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_submit_video', array(
+                    'section'	  => 'neomax_submit_video_section',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
+
 
 
 // Below Slider Grid (2-Row) Section
@@ -406,7 +334,21 @@ $wp_customize->add_control('neomax_below_slider_posts', array(
     'input_attrs' => array('min' => 1, 'max' => 20),
 ));
 
-
+        // Pro Version
+        $wp_customize->add_setting( 'pro_version_slider_grid', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_slider_grid', array(
+                    'section'	  => 'neomax_below_slider_grid',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
 
 
 
@@ -452,6 +394,22 @@ $wp_customize->add_control('neomax_large_poster_posts', array(
     'type'     => 'number',
     'input_attrs' => array('min' => 1, 'max' => 5),
 ));
+   // Pro Version
+        $wp_customize->add_setting( 'pro_version_large_poster', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_large_poster', array(
+                    'section'	  => 'neomax_large_poster_section',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
+
 
 
 
@@ -507,6 +465,22 @@ $wp_customize->add_control('neomax_highlight_slider_posts', array(
     'type'     => 'number',
     'input_attrs' => array('min' => 1, 'max' => 12),
 ));
+// Pro Version
+        $wp_customize->add_setting( 'pro_version_highlight_slider', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_highlight_slider', array(
+                    'section'	  => 'neomax_highlight_slider',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
+
 
 
 // Trending Grid Section
@@ -561,7 +535,21 @@ $wp_customize->add_control('neomax_trending_grid_posts', array(
     'type'     => 'number',
     'input_attrs' => array('min' => 1, 'max' => 20),
 ));
-
+// Pro Version
+        $wp_customize->add_setting( 'pro_version_trending_grid', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_trending_grid', array(
+                    'section'	  => 'neomax_trending_grid',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
 
 
 // Footer Related Posts Slider
@@ -616,7 +604,21 @@ $wp_customize->add_control('neomax_footer_related_posts', array(
     'type'     => 'number',
     'input_attrs' => array('min' => 1, 'max' => 20),
 ));
-
+// Pro Version
+        $wp_customize->add_setting( 'pro_version_related_slider', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_related_slider', array(
+                    'section'	  => 'neomax_footer_related_slider',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
 
 
 
@@ -764,6 +766,7 @@ $wp_customize->add_control('neomax_footer_related_posts', array(
                     'section'	  => 'neomax_general_options',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium for Load More Posts feature - ', 'neomax' ),
                     'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
@@ -805,6 +808,7 @@ $wp_customize->add_control('neomax_footer_related_posts', array(
                     'section'	  => 'neomax_footer_settings',
                     'type'		  => 'pro_options',
                     'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium for changing Footer Links - ', 'neomax' ),
                     'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
                     'priority'	  => 100
                 )
@@ -874,7 +878,7 @@ $wp_customize->add_control('neomax_footer_related_posts', array(
         $wp_customize->add_setting(
             'neomax_main_color', //give it an ID
             array(
-                'default' => '#3d55ef', // Give it a default
+                'default' => '#e12b5f', // Give it a default
                 'sanitize_callback' => 'sanitize_hex_color',
                 'transport'      => 'refresh'
             )
@@ -893,24 +897,51 @@ $wp_customize->add_control('neomax_footer_related_posts', array(
         $wp_customize->add_setting(
             'neomax_main_text', //give it an ID
             array(
-                'default' => '#3d55ef', // Give it a default
+                'default' => '#e12b5f', // Give it a default
                 'sanitize_callback' => 'sanitize_hex_color',
                 'transport'      => 'refresh'
             )
         );
-        $wp_customize->add_control(
-            new Neomax_Customize_Pro_Version(
-                $wp_customize,
-                'neomax_custom_text', //give it an ID
-                array(
-                    'label'      => esc_html__( 'Upgrade', 'neomax' ), //set the label to appear in the Customizer
-                    'section'    => 'colors', //select the section for it to appear under
-                    'settings'   => 'neomax_main_text', //pick the setting it applies to
+         // Pro Version
+        $wp_customize->add_setting( 'pro_version_colors23', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_colors23', array(
+                    'section'	  => 'colors',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium for more Color options - ', 'neomax' ),
                     'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
                 )
             )
         );
 
+
+
+    // Typography Settings
+        $wp_customize->add_section( 'neomax_typography_settings', array(
+            'title'       => esc_html__( 'Typography Settings', 'neomax' ),
+             'priority'    => 20
+        ) );
+
+       
+         // Pro Version
+        $wp_customize->add_setting( 'pro_version_colors243', array(
+            'sanitize_callback' => 'neomax_sanitize_custom_control'
+        ) );
+        $wp_customize->add_control( new Neomax_Customize_Pro_Version ( $wp_customize,
+                'pro_version_colors243', array(
+                    'section'	  => 'neomax_typography_settings',
+                    'type'		  => 'pro_options',
+                    'label' 	  => esc_html__( 'Upgrade', 'neomax' ),
+                    'message'     => esc_html__( 'Upgrade to Neomax Premium for Typography options - ', 'neomax' ),
+                    'description' => esc_url_raw( 'https://www.vinethemes.com/downloads/neomax-movie-video-wordpress-theme/' ),
+                    'priority'	  => 100
+                )
+            )
+        );
 
 
     }
@@ -920,11 +951,13 @@ function neomax_sanitize_image( $file, $setting ) {
 
     $mimes = array(
         'jpg|jpeg|jpe' => 'image/jpeg',
-        'gif'          => 'image/gif',
         'png'          => 'image/png',
+        'gif'          => 'image/gif',
         'bmp'          => 'image/bmp',
         'tif|tiff'     => 'image/tiff',
-        'ico'          => 'image/x-icon'
+        'ico'          => 'image/x-icon',
+        'webp'         => 'image/webp',
+        'avif'         => 'image/avif',
     );
 
     //check file type from file name

@@ -43,7 +43,9 @@
                             </div>
                             <div class="poster-meta">
                                 <span><i class="fa fa-clock"></i> <?php echo esc_html(human_time_diff(get_the_time('U'), current_time('timestamp'))) . ' ago'; ?></span>
-                                <span><i class="fa fa-comments"></i> <?php echo get_comments_number(); ?></span>
+                                <span><i class="fa fa-comments"></i> <?php if (comments_open()) : ?>
+                                                    <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                                                <?php endif; ?></span>
                             </div>
                             <a href="<?php the_permalink(); ?>" class="poster-play-button">Play Now <i class="fa fa-angle-right"></i></a>
                         </div>
@@ -71,7 +73,9 @@
                             </div>
                             <div class="poster-meta">
                                 <span><i class="fa fa-clock"></i> <?php echo esc_html(human_time_diff(get_the_time('U'), current_time('timestamp'))) . ' ago'; ?></span>
-                                <span><i class="fa fa-comments"></i> <?php echo get_comments_number(); ?></span>
+                                <span><i class="fa fa-comments"></i> <?php if (comments_open()) : ?>
+                                                    <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                                                <?php endif; ?></span>
                             </div>
                             <a href="<?php the_permalink(); ?>" class="poster-play-button">Read More <i class="fa fa-angle-right"></i></a>
                         </div>

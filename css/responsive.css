@@ -19,20 +19,29 @@
         max-width: 1200px;
     }
     .two-row-grid-section .neomax_slides {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr) !important;
     }
 }
 @media only screen and (max-width: 1205px) and (min-width: 1025px) {
+    .two-row-grid-section .neomax_slides {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
     .two-row-grid-section, #content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
         max-width: 1000px;
     }
 }
 @media only screen and (max-width: 900px) {
     .two-row-grid-section .neomax_slides {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr) !important;
     }
 }
 @media only screen and (max-width:1000px) {
+    .container{
+        padding:0 20px;
+    }
+    .two-row-grid-section .neomax_slides {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
     .small .neomax_slides .image-slide a img {
         height: 90px !important;
     }
@@ -45,6 +54,13 @@
     }
 }
 @media only screen and (max-width:920px) {
+    .movie-player-header .video-wrapper {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+    .movie-player-header {
+        padding-top: 50px;
+    }
     .neomax-top-bar.header2 .menu-wrap{
         padding-bottom:0;
     }
@@ -119,14 +135,7 @@
         display:block;
     }
 
-    .neomax-top-bar.header1 .menu-wrap {
-        width: 100%;
-        text-align: left;
-    }
-
-    .neomax-top-bar.header1 .header-inside{
-        width:80%;
-    }
+  
 
     .neomax-top-bar .social-links {
         position: absolute;
@@ -263,6 +272,17 @@
 
 
 @media only screen and (max-width:880px) {
+    .poster-title a {
+    font-size: 26px;
+}
+
+.poster-desc {
+    font-size: 14px;
+}
+
+.poster-inner {
+    padding: 0 50px 0 50px;
+}
     .neomax_afterslides .item-slide, .neomax_beforeslides .item-slide{
         margin-bottom:25px;
     }
@@ -370,11 +390,8 @@
         padding-bottom: 5%;
     }
 
-
-
-
-    .sub-title h1 {
-        font-size: 26px;
+    #content-wrap {
+        padding: 0 20px;
     }
 
     .post blockquote p {
@@ -484,7 +501,18 @@
 
 
 @media only screen and (max-width:767px) {
-
+    .video-grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .video-card-content {
+        padding: 12px;
+    }
+    
+    .video-title {
+        font-size: 15px;
+    }
     .item-wrapped-left {
         width: 100%;
     }
@@ -507,8 +535,42 @@
     }
 }
 
+@media only screen and (max-width:700px) {
+    .header1wrap .menu-wrap {
+        display: none;
+    }
+}
+
 
 @media only screen and (max-width:600px) {
+    .poster-title a {
+        font-size: 20px;
+    }
+    .poster-desc{
+        display:none;
+    }
+    .large-poster-section .poster-play-icon {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+    }
+    .large-poster-section .image-slide{
+        height: 450px;
+    }
+    .two-row-grid-section .neomax_slides {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .submit-video a {
+        border: none;
+        color: transparent;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 20px;
+    }
+
+    .submit-video a:before {
+        color: #e12b5f;
+    }
     .neomax-top-bar.header2 .header-inside {
         max-width: 70%;
     }
@@ -601,6 +663,18 @@
 
 
 @media only screen and (max-width:479px) {
+    .play-overlay {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .play-overlay i {
+        font-size: 20px;
+    }
+    
+    .video-grid-container {
+        gap: 16px;
+    }
     .top-part-wrap h1 {
         font-size: 24px;
     }

@@ -30,7 +30,11 @@ function neomax_register_required_plugins() {
             'slug'      => 'mailchimp-for-wp',
             'required'  => false,
         ),
-
+		array(
+            'name'      => 'Smart-Author-Box-Widget',
+            'slug'      => 'smart-author-box-widget',
+            'required'  => false,
+        ),
 
 	);
 

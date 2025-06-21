@@ -10,7 +10,7 @@ get_header();
 
 <?php
     $video_embed = get_first_video_embed();
-$thumbnail_url = neomax_get_embed_thumbnail(get_the_ID(), 'maxresdefault');
+$thumbnail_url = neomax_get_embed_thumbnail(get_the_ID());
 if ($video_embed && $thumbnail_url):
 ?>
 
@@ -48,7 +48,7 @@ if ($video_embed && $thumbnail_url):
                     <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
 
                     <span class="post-comments">
-                        <i class="fa fa-comments"></i> <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                        <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
                     </span>
                     <div class="video-action-buttons">
                         <button class="share-toggle-btn"><i class="fas fa-share-alt"></i> Share</button>
@@ -152,7 +152,7 @@ if ($video_embed && $thumbnail_url):
                                             echo get_avatar(get_the_author_meta('ID'), 100, '', '', ['extra_attr' => 'itemprop="image"']);
                                             the_author_posts_link();
                                             ?>
-                                            <i class="fa fa-comments"></i><?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
+                                            <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
                                         </div>
                                     </div>
                                 </div>
