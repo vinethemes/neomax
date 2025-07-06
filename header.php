@@ -31,7 +31,7 @@
     }
     else { do_action( 'wp_body_open' ); }
     ?>
-    <a class="skip-link" href="#content"><?php _e( 'Skip to main content', 'neomax' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#main-content"><?php _e( 'Skip to main content', 'neomax' ); ?></a>
     
 
 
@@ -39,11 +39,21 @@
             <div class="header1wrap">
         <!-- Update your toggle button to remove href -->
          
-            <?php if ( has_nav_menu( 'main' ) ) { ?>
-        <button class="toggle" type="button">
-            <i class="fa fa-bars"></i>
-            <span class="screen-reader-text">Menu</span>
-        </button><?php } ?>
+         
+
+
+
+<!-- Toggle button -->
+<?php if ( has_nav_menu( 'main' ) ) { ?>
+<button class="toggle" data-micromodal-trigger="menu-modal" aria-controls="menu-modal">
+<i class="fa fa-bars"></i>
+<span class="screen-reader-text">Menu</span>
+</button>
+<?php } ?>
+
+
+
+
 
             <div class="header-inside clearfix">
 
@@ -152,7 +162,22 @@
             </div><!-- header inside -->
             <div class="menu-wrap">
 
-            <?php if ( has_nav_menu( 'main' ) ) { ?>
+            
+
+
+
+
+<!-- MicroModal-based Offcanvas -->
+<div class="modal micromodal-slide" id="menu-modal" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container menu-container" role="dialog" aria-modal="true" aria-labelledby="menu-modal-title">
+
+      <header class="menu-header">
+        
+        <button class="modal__close" type="button" aria-label="Close menu" data-micromodal-close>x</button>
+      </header>
+
+      <?php if ( has_nav_menu( 'main' ) ) { ?>
                 <div class="top-bar">
                     <div class="menu-wrap-inner">
                         <nav id="main-nav">
@@ -208,6 +233,24 @@
                 </div><!-- .top-bar -->
             <?php } ?>
 
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             
             <div class="search-bar">
 
@@ -229,7 +272,7 @@
 
         </div><!-- top bar -->
         
-    <div id="wrapper" class="clearfix">
+    <div id="main-content" class="clearfix">
 
 
             <div id="main" class="clearfix">

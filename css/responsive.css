@@ -5,17 +5,17 @@
     }
 }
 @media only screen and (min-width:1580px) {
-    .two-row-grid-section, #content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
+    .two-row-grid-section, div#content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
         max-width: 1530px;
     }
 }
 @media only screen and (min-width:1780px) {
-    .two-row-grid-section, #content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
+    .two-row-grid-section, div#content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
         max-width: 1746px;
     }
 }
 @media only screen and (max-width:1579px) {
-    .two-row-grid-section, #content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
+    .two-row-grid-section, div#content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
         max-width: 1200px;
     }
     .two-row-grid-section .neomax_slides {
@@ -26,7 +26,7 @@
     .two-row-grid-section .neomax_slides {
         grid-template-columns: repeat(4, 1fr) !important;
     }
-    .two-row-grid-section, #content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
+    .two-row-grid-section, div#content-wrap, .highlight-slider-section, .header1wrap, .footer-slider-section {
         max-width: 1000px;
     }
 }
@@ -390,7 +390,7 @@
         padding-bottom: 5%;
     }
 
-    #content-wrap {
+    div#content-wrap {
         padding: 0 20px;
     }
 

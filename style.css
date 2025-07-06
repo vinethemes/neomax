@@ -5,7 +5,7 @@
 
     Author: VineThemes
     Author URI: https://www.vinethemes.com
-    Version: 1.0
+    Version: 1.0.1
     Tested up to: 6.8.1
     Requires PHP: 5.6
     Text Domain: neomax
@@ -221,7 +221,7 @@
         padding: 0;
     }
 
-    #content-wrap {
+    div#content-wrap {
         padding: 0;
         max-width: 1550px;
         margin: 30px auto 30px;
@@ -260,9 +260,6 @@
 
     .top-bar .sub-menu .sub-menu {
         z-index: 999;
-        -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
-        -moz-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
-        box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
     }
 
     .logo {
@@ -346,7 +343,8 @@
 
     /* ===[ Navigation Styling ]=== */
 
-    .menu-toggle { display: none }
+    
+      
 
     .menu-wrap {
         display: inline-block;
@@ -1269,7 +1267,6 @@
     }
 
     .comments .logged-in-as, .comment-notes {
-        float: left;
         font-size: 15px;
         color: #aaa;
         margin-bottom: 35px !important;
@@ -1488,7 +1485,7 @@
     }
 
     .footer-inside {
-        margin-top:30px;
+ 
         padding: 70px 25px 0;        
     }
     .footer-inside .containers {
@@ -2517,11 +2514,11 @@
         padding-top:0;
     }
 
-    .single #content-wrap {
+    .single #main-content {
         display: block;
         padding-top: 15px;
     }
-    body.page #content-wrap {
+    body.page #main-content {
         padding-top: 30px;
     }
     .post-wrap.list .post .post-content p.align-left {
@@ -3965,7 +3962,7 @@
     #insta_widget_footer:not(:has(div)){
         display:none;
     }
-    div#footer-top:not(:has(.container div)){
+    div#footer-top:not(:has(.containers div)){
         display:none;
     }
     
@@ -4755,8 +4752,7 @@ h1.video-title {
 
 
 .share-toggle-btn {
-    padding: 8px 15px;
-    background: #3498db;
+    background: none;
     color: #fff;
     font-weight: bold;
     border: none;
@@ -4895,6 +4891,10 @@ button.toggle {
     border: 2px solid #e12b5f;
     padding: 0 15px;
     overflow:hidden;
+    transition: 300ms;
+    -o-transition: 300ms;
+    -moz-transition: 300ms;
+    -webkit-transition: 300ms;
 }
 .header-inside.clearfix {
     display: flex;
@@ -4903,9 +4903,6 @@ button.toggle {
     justify-content: center;
     align-items: center;
     min-width: 150px;
-}
-.top-bar {
-    display: none;
 }
 
 .menu-wrap {
@@ -4979,7 +4976,7 @@ ul.social-icons {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    border-top: 1px solid #333;
+    border-top: 1px solid #eee;
     margin-top: 30px !important;
     padding-top: 10px !important;
 }
@@ -5014,6 +5011,42 @@ opacity: 1; /* Fade in */
 
 
 /* Darkmode css start */
+
+body.darkmode--activated #main-nav li {
+    border-color: #333;
+}
+body.darkmode--activated .modal__close {
+    color: #fff;
+}
+
+body.darkmode--activated #main-nav li a {
+    color: #fff;
+}
+
+body.darkmode--activated #main-nav .dropdown-toggle {
+    color: #eee;
+}
+
+body.darkmode--activated #main-nav .sub-menu {
+    background: #222;
+}
+
+body.darkmode--activated #main-nav ul.social-icons li a {
+    color: #fff;
+}
+
+
+body.darkmode--activated .modal__container {
+    background: #000;
+}
+
+body.darkmode--activated .top-bar {
+    background: #000;
+}
+
+body.darkmode--activated ul.social-icons {
+    border-color: #333;
+}
 .darkmode-toggle{z-index:1;    background: #e12b5f !important;color:#fff;}
 .darkmode-toggle--white{
 	background:#fff !important;color:#000;
@@ -5147,4 +5180,436 @@ body.page .title-wrap {
 body.page .page-title {
     padding-top: 30px;
     margin-bottom: 20px;
+}
+#sidebar .widget a {
+    color: #e12b5f;
+    text-decoration: underline;
+}
+.single .title-wrap h1 {
+    font-size: 30px;
+}
+
+div#main-content {
+    transition: transform 400ms ease;
+    position: relative;
+    height: 100%;
+}
+.page-template-template-homepage div#main-content {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+.single div#main-content {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+.modal {
+    display: none;
+  }
+  .modal.is-open {
+    display: block;
+  }
+  
+  .modal__overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .modal__container {
+    background: #fff;
+    width: 300px;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+  }
+  
+  .modal.is-open .modal__container {
+    transform: translateX(0);
+  }
+  
+  .modal__close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    top: 35px;
+    right: 35px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px;
+    font-family: 'FontAwesome';
+  }
+  /* .modal__close i {
+    transition: transform 0.5s ease;
+  }
+  .modal__close i:hover {
+    transform: rotate(90deg);
+  } */
+  .menu-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem;
+  }
+  .menu-nav a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  .menu-nav a:focus {
+    outline: 2px solid #0073aa;
+  }
+  
+
+
+  .toggle {
+    cursor: pointer;
+    z-index: 1002;
+    position: relative; /* if needed */
+  }
+
+
+
+
+/* Initially hidden */
+.modal {
+    display: none;
+    pointer-events: none;
+  }
+  
+  .modal.is-open {
+    display: block;
+    pointer-events: auto;
+  }
+  
+  /* Overlay fades */
+  .modal__overlay {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal.is-open .modal__overlay {
+    opacity: 1;
+  }
+  
+  /* Container slides */
+  .modal__container {
+    background: #fff;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
+  
+  /* Slide in when open */
+  .modal.is-open .modal__container {
+    transform: translateX(0);
+  }
+  
+  /* Fade out overlay on close */
+  .modal[aria-hidden="true"] .modal__overlay {
+    opacity: 0;
+  }
+  
+  /* Slide out on close */
+  .modal[aria-hidden="true"] .modal__container {
+    transform: translateX(-100%);
+  }
+  
+
+  
+
+
+
+/* Container */
+.top-bar {
+    background-color: #ffffff;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .menu-wrap-inner {
+    padding: 20px;
+    margin-top: 60px;
+  }
+  
+  /* Navigation wrapper */
+  #main-nav {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Base UL */
+  #main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Base LI */
+  #main-nav li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Links */
+  #main-nav a,
+  #main-nav .submenu-trigger {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Hover and focus states */
+ 
+  #main-nav .submenu-trigger:hover,
+  #main-nav .submenu-trigger:focus {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+  
+  /* Submenus hidden by default (we'll transform with JS) */
+ 
+  /* Active panel (when JS adds .active) */
+  .menu-panel.active .sub-menu {
+    display: block;
+  }
+  
+  /* Back button */
+  .back-button {
+    background-color: #f9f9f9;
+    border: none;
+    font-weight: bold;
+    padding: 14px 20px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  /* Submenu trigger button */
+  .submenu-trigger {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #0073aa;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Arrow icon style */
+  .submenu-trigger::after {
+    content: '▸';
+    float: right;
+    color: #999;
+  }
+
+  ul.social-icons {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0 0;
+    justify-content: start;
+    list-style: none;
+  }
+  
+  ul.social-icons li a {
+    color: #666;
+    font-size: 18px;
+    transition: color 0.2s ease;
+  }
+  
+  ul.social-icons li a:hover {
+    color: #0073aa;
+  }
+  
+
+
+
+  /* Wrapper for all sliding panels */
+.panel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Each menu panel (root or submenu) */
+  .menu-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Only the active one is shown */
+  .menu-panel.active {
+    transform: translateX(0%);
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Back button styling */
+  .back-button {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    font-weight: bold;
+    background-color: #f8f8f8;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  /* Submenu trigger link/button */
+  .submenu-trigger {
+    background: none;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .submenu-trigger::after {
+    content: '▸';
+    float: right;
+    color: #aaa;
+  }
+  
+  /* Menu links */
+  .menu-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-panel li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .menu-panel a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* Hover effect */
+  .menu-panel a:hover,
+  .submenu-trigger:hover,
+  .back-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+  /* Main menu list */
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #main-nav li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Link & toggle button */
+  #main-nav a,
+  #main-nav .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+   
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  /* Arrow icon styling */
+  .dropdown-toggle .arrow {
+    margin-left: auto;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate arrow when open */
+  .dropdown-toggle[aria-expanded="true"] .arrow {
+    transform: rotate(90deg);
+  }
+  
+  /* Submenu base style */
+  #main-nav .sub-menu {
+    background: #f8f8f8;
+    padding-left: 10px;
+  }
+  
+  /* When hidden attribute is present, hide submenu */
+  #main-nav .sub-menu[hidden] {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+  }
+  #main-nav ul li a + button {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    background: none;
+    padding: 10px !important;
+}
+
+#main-nav li {
+    position: relative;
+}
+.modal.is-open[aria-hidden="false"] .modal__overlay{
+    z-index: 9999;
+}
+
+#main-nav .social-icons li {
+    border-bottom: none;
+}
+
+#main-nav ul.social-icons {
+    justify-content: center;
+}
+#main-nav ul.social-icons li a {
+    color: #000;
+    font-size: 18px;
+    transition: color 0.2s ease;
+    padding: 6px;
+}
+#main-nav li:last-child {
+    border-bottom: none;
 }

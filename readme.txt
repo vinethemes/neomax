@@ -2,8 +2,8 @@
 Contributors: vinethemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 6.8.1
-Version: 1.0
-Stable tag: 1.0
+Version: 1.0.1
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, flexible-header, custom-menu, editor-style, featured-images, custom-logo, sticky-post, footer-widgets, theme-options, threaded-comments, translation-ready, blog, news, full-width-template, grid-layout, one-column, post-formats, entertainment
@@ -45,6 +45,18 @@ License: This software is licensed under a dual license system (MIT or GPL versi
 Matchheight, Copyright by @liabru http://brm.io/jquery-match-height/
 License: MIT
 
+TGM Plugin Activation
+Source: https://github.com/TGMPA/TGM-Plugin-Activation
+Author: Thomas Griffin, Gary Jones & contributors
+License: MIT License
+License URI: https://opensource.org/licenses/MIT
+
+jQuery mCustomScrollbar
+Source: https://github.com/malihu/malihu-custom-scrollbar-plugin
+Author: Manos Malihutsakis
+License: MIT License
+License URI: https://opensource.org/licenses/MIT
+
 neomax_custom_controller.php - https://www.cssigniter.com/wordpress-customizer-custom-controls-categories-dropdown/
 License: GPL Version 2
 
@@ -52,7 +64,7 @@ Poppins Google Font for Logo as Image, Copyright (c) 2020 Fonts Creators & Googl
 License: Open Font License
 Source: https://fonts.google.com/specimen/Poppins
 
-HC Off-canvas Nav - https://github.com/somewebmedia/hc-offcanvas-nav
+Micromodal, Copyright (c) 2017 Indrashish Ghosh - https://github.com/Ghosh/micromodal
 License: MIT
 
 Darkmode.js - https://github.com/sandoche/Darkmode.js
@@ -135,3 +147,11 @@ Contact Us https://www.vinethemes.com/forums.
 
 = 1.0 - Feb 16 2025 =
 * Initial Public Release
+
+= 1.0.1 - June 30 2025 =
+* Added accessiblility support with Micromodal.js for Offcanvas menu
+* Removed Hc-Offcanvas-menu support 
+* Fixed Skip links
+* Fixed anchor tag underline 
+* Fixed prefixing issue
+* Added license info for JS library, CSS library used 

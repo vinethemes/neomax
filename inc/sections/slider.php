@@ -106,7 +106,7 @@ if (!empty($video_thumb)) {
                         </h2>
                         <div class="slider-meta">
                             <div class="scroll-post"><?php echo neomax_getCategory(); ?></div>
-                            <div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo time_ago_custom(get_the_date('c')); ?></a></div>
+                            <div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo neomax_time_ago_custom(get_the_date('c')); ?></a></div>
                             <div class="postcomment"><?php if (comments_open()) : ?>
                                                     <?php comments_popup_link(__('0', 'neomax'), __('1', 'neomax'), __('%', 'neomax')); ?>
                                                 <?php endif; ?></div>

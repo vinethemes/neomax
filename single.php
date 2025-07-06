@@ -9,7 +9,7 @@ get_header();
 
 
 <?php
-    $video_embed = get_first_video_embed();
+    $video_embed = neomax_get_first_video_embed();
 $thumbnail_url = neomax_get_embed_thumbnail(get_the_ID());
 if ($video_embed && $thumbnail_url):
 ?>
@@ -160,7 +160,7 @@ if ($video_embed && $thumbnail_url):
                             </div><!-- /.top-part-wrap -->
 
                             <div class="post-content">
-                                <?php echo wp_kses_post(remove_first_video_block(get_the_content())); ?>
+                                <?php echo wp_kses_post(neomax_remove_first_video_block(get_the_content())); ?>
 
                                 <div class="pagelink">
                                     <?php wp_link_pages(); ?>

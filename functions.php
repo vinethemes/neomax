@@ -33,7 +33,7 @@ function neomax_setup() {
     add_image_size( 'neomax-full-thumb', 1080, 0, true );
     add_image_size( 'neomax-random-thumb', 550, 550, true );
     add_image_size( 'neomax-after-thumb', 250, 250, true );
-    add_image_size('neomax-thumb', 200, 120, true);
+    add_image_size( 'neomax-thumb', 200, 120, true);
 
     set_post_thumbnail_size( 150, 150, true ); // Default Thumb
 
@@ -42,7 +42,7 @@ function neomax_setup() {
     add_image_size( 'neomax-medium-image', 600, 600, true  );// Large Post Image
     add_image_size( 'neomax-twogrid-image', 250, 300, true  );// Two Grid Post Image
     add_image_size( 'neomax-slider-image', 900, 600, true  );// Large Post Image
-        add_image_size( 'neomax-video-thumb', 480, 270, true ); // 16:9 ratio
+    add_image_size( 'neomax-video-thumb', 480, 270, true ); // 16:9 ratio
     add_image_size( 'neomax-featured-image', 150, 150, false  );// Large Post Image
     add_image_size( 'neomax-small-image', 715, 500, false  );// Large Post Image
     add_image_size( 'neomax-widget-small-thumb', 100, 100, true  );// Large Post Image
@@ -113,9 +113,8 @@ function neomax_scripts() {
     //mCustom Scroll bar
     wp_enqueue_script( 'neomax-mcustomscrollbar-js', get_template_directory_uri() . '/includes/js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), '3.0.6', true );
 
-    //HC Off-canvas Nav
-    wp_enqueue_style( 'neomax-hc-offcanvas-css', get_template_directory_uri() . '/includes/css/hc-offcanvas/hc-offcanvas-nav.carbon.css', array(), '6.1.5', 'screen' );
-    wp_enqueue_script( 'neomax-hc-offcanvas-js', get_template_directory_uri() . '/includes/js/hc-offcanvas/hc-offcanvas-nav.js', array( 'jquery' ), '6.1.5', true );
+    //micromodal
+    wp_enqueue_script( 'neomax-jquery-micromodal', get_template_directory_uri() . '/includes/js/micromodal/micromodal.js', array( 'jquery' ), $version, true );
 
     //Darkmode.js
     wp_enqueue_script('neomax-darkmode-js', get_template_directory_uri() . '/includes/js/darkmode/darkmode-js.min.js', array('jquery'), '1.5.7', true);
@@ -462,7 +461,7 @@ include(get_template_directory() . '/customizer_style.php');
 /**
  * Time Ago
  * */
-function time_ago_custom($time) {
+function neomax_time_ago_custom($time) {
     $time_diff = human_time_diff(strtotime($time), current_time('timestamp'));
     return $time_diff . ' ago';
 }
@@ -508,7 +507,7 @@ add_action( 'wp_footer', function () {   if( !is_admin() ) {  ?>
 
 
 
-function has_video_embed($post_id = null) {
+function neomax_has_video_embed($post_id = null) {
     if (!$post_id) {
         $post_id = get_the_ID();
     }
@@ -518,7 +517,7 @@ function has_video_embed($post_id = null) {
     return preg_match('/youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com/', $content);
 }
 
-function get_first_video_embed($post_id = null) {
+function neomax_get_first_video_embed($post_id = null) {
     $post_id = $post_id ?: get_the_ID();
     $content = get_post_field('post_content', $post_id);
     $blocks = parse_blocks($content);
@@ -581,8 +580,8 @@ function get_first_video_embed($post_id = null) {
 
 
 
-add_filter('oembed_result', 'autoplay_video_embeds', 10, 3);
-function autoplay_video_embeds($html, $url, $args) {
+add_filter('oembed_result', 'neomax_autoplay_video_embeds', 10, 3);
+function neomax_autoplay_video_embeds($html, $url, $args) {
     if (strpos($url, 'youtube.com') !== false ) {
         $html = preg_replace('/src="([^"]+)"/', 'src="$1&autoplay=1&mute=1"', $html);
     }
@@ -591,7 +590,7 @@ function autoplay_video_embeds($html, $url, $args) {
     }
     return $html;
 }
-function remove_first_video_block($content) {
+function neomax_remove_first_video_block($content) {
     $blocks = parse_blocks($content);
     $output = '';
     $removed = false;
